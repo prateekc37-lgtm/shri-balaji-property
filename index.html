@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SHRI BALAJI PROPERTY DEALER | Buy, Sell, Rent & Invest</title>
+  <meta name="description" content="SHRI BALAJI PROPERTY DEALER helps families and investors buy, sell, rent, and invest in verified residential, commercial, and plot properties with trust and transparent guidance." />
+  <meta name="keywords" content="SHRI BALAJI PROPERTY DEALER, property dealer, real estate, buy property, sell property, rent property, commercial property, plot deals" />
+  <meta property="og:title" content="SHRI BALAJI PROPERTY DEALER" />
+  <meta property="og:description" content="Your trusted property partner for buying, selling, renting, and investing with confidence." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#0A2342" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root, [data-theme="light"] {
+      --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+      --text-sm: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
+      --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+      --text-lg: clamp(1.125rem, 1rem + 0.75vw, 1.5rem);
+      --text-xl: clamp(1.5rem, 1.2rem + 1.25vw, 2.25rem);
+      --text-2xl: clamp(2rem, 1.2rem + 2.5vw, 3.8rem);
+      --text-3xl: clamp(2.5rem, 1rem + 4vw, 4.8rem);
+      --space-1: 0.25rem; --space-2: 0.5rem; --space-3: 0.75rem; --space-4: 1rem; --space-5: 1.25rem;
+      --space-6: 1.5rem; --space-8: 2rem; --space-10: 2.5rem; --space-12: 3rem; --space-16: 4rem; --space-20: 5rem;
+      --radius-sm: 0.375rem; --radius-md: 0.75rem; --radius-lg: 1.2rem; --radius-xl: 1.6rem; --radius-full: 9999px;
+      --color-bg: #f7f9fc; --color-surface: #ffffff; --color-surface-2: #f0f4fa; --color-surface-offset: #e8eef7; --color-border: rgba(10,35,66,0.12);
+      --color-text: #0f1b2d; --color-text-muted: #52627a; --color-text-faint: #7d8aa0; --color-text-inverse: #ffffff;
+      --color-primary: #0A2342; --color-primary-hover: #133764; --color-primary-highlight: rgba(10,35,66,0.08);
+      --color-gold: #D4AF37; --color-gold-deep: #a78416; --color-success: #1b7b4a; --shadow-sm: 0 2px 8px rgba(11,24,45,0.08); --shadow-md: 0 10px 30px rgba(11,24,45,0.12); --shadow-lg: 0 20px 60px rgba(11,24,45,0.18);
+      --content-default: 1180px;
+      --font-display: 'Cormorant Garamond', Georgia, serif;
+      --font-body: 'Manrope', Arial, sans-serif;
+      --header-height: 88px;
+    }
+    [data-theme="dark"] {
+      --color-bg: #09111d; --color-surface: #0f1a29; --color-surface-2: #132033; --color-surface-offset: #18263a; --color-border: rgba(255,255,255,0.12);
+      --color-text: #eef3fa; --color-text-muted: #b7c2d3; --color-text-faint: #8fa0b8; --color-text-inverse: #09111d;
+      --color-primary: #d7e6ff; --color-primary-hover: #ffffff; --color-primary-highlight: rgba(212,175,55,0.14);
+      --color-gold: #f2c94c; --color-gold-deep: #d9ad24; --shadow-sm: 0 2px 10px rgba(0,0,0,0.35); --shadow-md: 0 14px 36px rgba(0,0,0,0.38); --shadow-lg: 0 24px 64px rgba(0,0,0,0.48);
+    }
+    * , *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { min-height: 100vh; font-family: var(--font-body); font-size: var(--text-base); line-height: 1.6; color: var(--color-text); background: var(--color-bg); }
+    img, svg, iframe { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    button, input, select, textarea { font: inherit; color: inherit; }
+    button { cursor: pointer; border: 0; }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+    .skip-link { position: absolute; left: var(--space-4); top: -100px; background: var(--color-primary); color: #fff; padding: var(--space-3) var(--space-4); border-radius: var(--radius-full); z-index: 1000; }
+    .skip-link:focus { top: var(--space-4); }
+    .container { width: min(calc(100% - 2rem), var(--content-default)); margin-inline: auto; }
+    .section { padding: clamp(var(--space-12), 7vw, var(--space-20)) 0; }
+    .eyebrow { display: inline-flex; align-items: center; gap: var(--space-2); padding: 0.45rem 0.85rem; border-radius: var(--radius-full); background: var(--color-primary-highlight); color: var(--color-primary); font-size: var(--text-xs); letter-spacing: 0.14em; text-transform: uppercase; font-weight: 800; }
+    .section-title { font-family: var(--font-display); font-size: var(--text-xl); line-height: 1; margin-top: var(--space-4); }
+    .section-copy { margin-top: var(--space-4); color: var(--color-text-muted); max-width: 62ch; }
+    .btn-row { display: flex; flex-wrap: wrap; gap: var(--space-3); }
+    .btn { min-height: 48px; display: inline-flex; align-items: center; justify-content: center; gap: 0.65rem; padding: 0.95rem 1.35rem; border-radius: var(--radius-full); font-size: var(--text-sm); font-weight: 800; transition: transform .25s ease, box-shadow .25s ease, background .25s ease, color .25s ease; }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary { background: linear-gradient(135deg, var(--color-primary), #173d72); color: #fff; box-shadow: var(--shadow-md); }
+    .btn-primary:hover { background: linear-gradient(135deg, #0d2d54, #1c4f8f); }
+    .btn-secondary { background: rgba(255,255,255,0.12); color: #fff; border: 1px solid rgba(255,255,255,0.2); backdrop-filter: blur(12px); }
+    .btn-outline { background: transparent; color: var(--color-primary); border: 1px solid var(--color-border); }
+    .btn-gold { background: var(--color-gold); color: #131313; }
+    .tag { display: inline-flex; align-items: center; gap: 0.45rem; padding: 0.55rem 0.8rem; border-radius: var(--radius-full); background: rgba(212,175,55,0.14); color: var(--color-gold); font-size: var(--text-xs); font-weight: 700; }
+    .site-header { position: sticky; top: 0; z-index: 100; background: color-mix(in srgb, var(--color-bg) 82%, transparent); backdrop-filter: blur(14px); border-bottom: 1px solid var(--color-border); }
+    .header-inner { min-height: var(--header-height); display: flex; align-items: center; justify-content: space-between; gap: var(--space-4); }
+    .brand { display: flex; align-items: center; gap: var(--space-3); }
+    .brand-mark { width: 48px; height: 48px; border-radius: 50%; display: grid; place-items: center; background: radial-gradient(circle at top, rgba(212,175,55,.35), rgba(10,35,66,.96)); color: #fff; box-shadow: inset 0 1px 1px rgba(255,255,255,0.3), var(--shadow-sm); }
+    .brand-text strong { display: block; font-size: 0.95rem; letter-spacing: .08em; }
+    .brand-text span { color: var(--color-text-muted); font-size: var(--text-xs); }
+    .nav { display: flex; align-items: center; gap: var(--space-4); }
+    .nav-links { display: flex; align-items: center; gap: var(--space-4); font-size: var(--text-sm); color: var(--color-text-muted); }
+    .nav-links a:hover { color: var(--color-primary); }
+    .theme-toggle, .mobile-toggle { width: 46px; height: 46px; border-radius: 50%; border: 1px solid var(--color-border); background: var(--color-surface); display: grid; place-items: center; box-shadow: var(--shadow-sm); }
+    .mobile-toggle { display: none; }
+    .hero { position: relative; overflow: hidden; min-height: calc(100vh - var(--header-height)); display: flex; align-items: center; background: linear-gradient(135deg, rgba(10,35,66,0.95), rgba(10,35,66,0.72)), url('https://picsum.photos/seed/luxuryestate/1600/1000') center/cover no-repeat; color: #fff; }
+    .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at right top, rgba(212,175,55,0.28), transparent 35%), radial-gradient(circle at left bottom, rgba(255,255,255,0.08), transparent 30%); pointer-events: none; }
+    .hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: 1.15fr 0.85fr; gap: var(--space-10); align-items: center; }
+    .hero-copy h1 { font-family: var(--font-display); font-size: clamp(2.8rem, 6vw, 5.6rem); line-height: 0.95; max-width: 10ch; }
+    .hero-copy p { margin-top: var(--space-5); max-width: 58ch; color: rgba(255,255,255,0.84); }
+    .hero-actions { margin-top: var(--space-6); }
+    .hero-points { margin-top: var(--space-6); display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: var(--space-3); }
+    .hero-points div { padding: var(--space-4); border-radius: var(--radius-lg); background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); backdrop-filter: blur(10px); }
+    .hero-points strong { display: block; font-size: var(--text-sm); }
+    .hero-card { padding: var(--space-5); border-radius: var(--radius-xl); background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.12); backdrop-filter: blur(16px); box-shadow: var(--shadow-lg); }
+    .slider { position: relative; border-radius: calc(var(--radius-xl) - 0.25rem); overflow: hidden; aspect-ratio: 4 / 5; }
+    .slide { position: absolute; inset: 0; opacity: 0; transition: opacity .8s ease, transform 1.2s ease; background-size: cover; background-position: center; transform: scale(1.03); }
+    .slide.active { opacity: 1; transform: scale(1); }
+    .slider-badges { position: absolute; left: var(--space-4); right: var(--space-4); bottom: var(--space-4); display: flex; flex-wrap: wrap; gap: var(--space-2); }
+    .slider-badges span { padding: .5rem .75rem; border-radius: var(--radius-full); background: rgba(10,35,66,0.7); backdrop-filter: blur(10px); font-size: var(--text-xs); }
+    .stats-grid, .service-grid, .reasons-grid, .faq-grid, .blog-grid { display: grid; gap: var(--space-4); }
+    .stats-grid { grid-template-columns: repeat(4, minmax(0,1fr)); margin-top: var(--space-8); }
+    .stat-card, .service-card, .reason-card, .property-card, .testimonial-card, .blog-card, .faq-item, .calc-card, .owner-card, .contact-card, .lead-card, .search-panel { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); }
+    .stat-card { padding: var(--space-5); }
+    .stat-card h3 { font-family: var(--font-display); font-size: var(--text-xl); color: var(--color-primary); }
+    .stat-card p { color: var(--color-text-muted); margin-top: var(--space-2); }
+    .service-grid { grid-template-columns: repeat(4, minmax(0,1fr)); margin-top: var(--space-8); }
+    .service-card, .reason-card, .blog-card { padding: var(--space-5); }
+    .icon-box { width: 54px; height: 54px; border-radius: 1rem; display: grid; place-items: center; background: linear-gradient(135deg, rgba(10,35,66,0.12), rgba(212,175,55,0.18)); color: var(--color-primary); margin-bottom: var(--space-4); }
+    .service-card h3, .reason-card h3, .blog-card h3, .faq-item h3, .owner-card h3, .contact-card h3, .lead-card h3, .calc-card h3 { font-size: var(--text-lg); line-height: 1.2; }
+    .service-card p, .reason-card p, .blog-card p, .contact-card p, .owner-card p, .lead-card p, .faq-item p, .property-meta { color: var(--color-text-muted); margin-top: var(--space-3); }
+    .property-controls { margin-top: var(--space-8); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--space-4); }
+    .filter-bar { display: flex; flex-wrap: wrap; gap: var(--space-2); }
+    .filter-btn { min-height: 42px; padding: 0.7rem 1rem; border-radius: var(--radius-full); border: 1px solid var(--color-border); background: var(--color-surface); color: var(--color-text-muted); font-size: var(--text-sm); font-weight: 700; }
+    .filter-btn.active { background: var(--color-primary); color: #fff; border-color: transparent; }
+    .properties-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: var(--space-5); margin-top: var(--space-5); }
+    .property-card { overflow: hidden; }
+    .property-media { position: relative; aspect-ratio: 4 / 3; overflow: hidden; }
+    .property-media img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s ease; }
+    .property-card:hover .property-media img { transform: scale(1.06); }
+    .property-type { position: absolute; top: var(--space-4); left: var(--space-4); }
+    .property-body { padding: var(--space-5); }
+    .price-row { display: flex; align-items: center; justify-content: space-between; gap: var(--space-3); }
+    .price-row strong { font-size: var(--text-lg); color: var(--color-primary); }
+    .property-features { margin-top: var(--space-4); display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: var(--space-3); font-size: var(--text-sm); color: var(--color-text-muted); }
+    .reason-wrap { display: grid; grid-template-columns: 0.95fr 1.05fr; gap: var(--space-6); align-items: start; margin-top: var(--space-8); }
+    .reasons-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+    .reason-visual { min-height: 100%; border-radius: var(--radius-xl); padding: var(--space-8); background: linear-gradient(180deg, rgba(10,35,66,0.96), rgba(10,35,66,0.82)), url('https://picsum.photos/seed/commercialestate/1200/1400') center/cover no-repeat; color: #fff; box-shadow: var(--shadow-lg); }
+    .reason-visual h3 { font-family: var(--font-display); font-size: clamp(2rem, 3vw, 3.5rem); line-height: .95; }
+    .reason-visual p { margin-top: var(--space-4); color: rgba(255,255,255,0.8); max-width: 34ch; }
+    .testimonials-wrap { margin-top: var(--space-8); position: relative; overflow: hidden; }
+    .testimonials-track { display: flex; transition: transform .5s ease; }
+    .testimonial-card { min-width: calc(33.333% - 1rem); margin-right: var(--space-4); padding: var(--space-5); }
+    .stars { color: var(--color-gold-deep); letter-spacing: 0.15em; }
+    .owner-section-grid, .contact-grid, .lead-grid, .extras-grid { display: grid; gap: var(--space-5); }
+    .owner-section-grid { grid-template-columns: 0.8fr 1.2fr; align-items: center; margin-top: var(--space-8); }
+    .owner-photo { min-height: 420px; border-radius: var(--radius-xl); background: linear-gradient(180deg, rgba(10,35,66,0.18), rgba(10,35,66,0.55)), url('https://picsum.photos/seed/ownerportrait/900/1200') center/cover no-repeat; box-shadow: var(--shadow-lg); }
+    .owner-card { padding: var(--space-8); }
+    .owner-card blockquote { margin-top: var(--space-5); padding-left: var(--space-4); border-left: 3px solid var(--color-gold); font-family: var(--font-display); font-size: var(--text-lg); line-height: 1.3; }
+    .lead-grid { grid-template-columns: 0.9fr 1.1fr; align-items: start; margin-top: var(--space-8); }
+    .lead-card { padding: var(--space-8); }
+    .search-panel, .calc-card { padding: var(--space-6); }
+    .search-grid, .form-grid { display: grid; gap: var(--space-4); }
+    .search-grid { grid-template-columns: 1.3fr repeat(3, 1fr) auto; }
+    .form-grid { grid-template-columns: repeat(2, minmax(0,1fr)); margin-top: var(--space-5); }
+    .field { display: grid; gap: var(--space-2); }
+    .field.full { grid-column: 1 / -1; }
+    label { font-size: var(--text-sm); font-weight: 700; }
+    input, select, textarea { width: 100%; padding: 0.95rem 1rem; border-radius: var(--radius-md); border: 1px solid var(--color-border); background: var(--color-surface-2); }
+    textarea { min-height: 130px; resize: vertical; }
+    .calc-results { margin-top: var(--space-5); padding: var(--space-5); border-radius: var(--radius-lg); background: var(--color-surface-2); display: grid; gap: var(--space-3); }
+    .faq-grid { grid-template-columns: repeat(2, minmax(0,1fr)); margin-top: var(--space-8); }
+    .faq-item { padding: var(--space-5); }
+    .blog-grid { grid-template-columns: repeat(3, minmax(0,1fr)); margin-top: var(--space-8); }
+    .blog-card img { border-radius: calc(var(--radius-lg) - .35rem); aspect-ratio: 16 / 10; object-fit: cover; margin-bottom: var(--space-4); }
+    .contact-grid { grid-template-columns: 0.9fr 1.1fr; margin-top: var(--space-8); }
+    .contact-card, .map-card { padding: var(--space-6); }
+    .contact-list { list-style: none; display: grid; gap: var(--space-4); margin-top: var(--space-5); }
+    .contact-list li { display: flex; gap: var(--space-3); align-items: flex-start; }
+    .map-card { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-xl); box-shadow: var(--shadow-sm); }
+    .map-frame { width: 100%; min-height: 420px; border: 0; border-radius: calc(var(--radius-xl) - .35rem); }
+    .footer { padding: var(--space-8) 0 calc(var(--space-16) + 20px); border-top: 1px solid var(--color-border); }
+    .footer-inner { display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--space-4); color: var(--color-text-muted); }
+    .floating-actions { position: fixed; right: 1rem; bottom: 1rem; z-index: 120; display: grid; gap: var(--space-3); }
+    .float-btn { width: 60px; height: 60px; border-radius: 50%; display: grid; place-items: center; color: #fff; box-shadow: var(--shadow-lg); }
+    .float-whatsapp { background: #25D366; }
+    .float-call { background: var(--color-primary); }
+    .popup-overlay { position: fixed; inset: 0; background: rgba(9,17,29,.56); display: none; align-items: center; justify-content: center; padding: var(--space-4); z-index: 160; }
+    .popup-overlay.active { display: flex; }
+    .popup-card { width: min(100%, 520px); padding: var(--space-8); border-radius: var(--radius-xl); background: var(--color-surface); border: 1px solid var(--color-border); box-shadow: var(--shadow-lg); position: relative; }
+    .popup-close { position: absolute; top: var(--space-4); right: var(--space-4); width: 42px; height: 42px; border-radius: 50%; border: 1px solid var(--color-border); background: var(--color-surface-2); }
+    .hidden { display: none !important; }
+    [data-animate] { opacity: 0; transform: translateY(28px); transition: opacity .7s ease, transform .7s ease; }
+    [data-animate].visible { opacity: 1; transform: translateY(0); }
+    @media (max-width: 1100px) {
+      .hero-grid, .reason-wrap, .owner-section-grid, .lead-grid, .contact-grid { grid-template-columns: 1fr; }
+      .stats-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+      .service-grid, .properties-grid, .blog-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+      .search-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+      .testimonial-card { min-width: calc(50% - 1rem); }
+    }
+    @media (max-width: 760px) {
+      :root { --header-height: 78px; }
+      .nav-links, .header-actions { display: none; }
+      .mobile-toggle { display: grid; }
+      .mobile-panel { position: absolute; top: calc(100% + .5rem); left: 1rem; right: 1rem; padding: var(--space-4); border-radius: var(--radius-lg); background: var(--color-surface); border: 1px solid var(--color-border); box-shadow: var(--shadow-md); display: none; }
+      .mobile-panel.active { display: grid; gap: var(--space-3); }
+      .hero { min-height: auto; padding: var(--space-12) 0; }
+      .hero-copy h1 { max-width: 12ch; }
+      .hero-points, .stats-grid, .service-grid, .properties-grid, .reasons-grid, .form-grid, .faq-grid, .blog-grid, .search-grid { grid-template-columns: 1fr; }
+      .property-features { grid-template-columns: 1fr 1fr; }
+      .testimonial-card { min-width: 100%; margin-right: 0; }
+      .property-controls { align-items: stretch; }
+      .floating-actions { right: .75rem; bottom: .75rem; }
+      .footer-inner { flex-direction: column; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
+    }
+  </style>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#home" class="brand" aria-label="SHRI BALAJI PROPERTY DEALER home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M3 20h18"></path><path d="M5 20V10l7-6 7 6v10"></path><path d="M9 20v-5h6v5"></path><path d="M8 9h8"></path>
+          </svg>
+        </span>
+        <span class="brand-text">
+          <strong>SHRI BALAJI PROPERTY DEALER</strong>
+          <span>Premium Property Guidance</span>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Primary navigation">
+        <div class="nav-links">
+          <a href="#services">Services</a>
+          <a href="#properties">Properties</a>
+          <a href="#about">About</a>
+          <a href="#faq">FAQ</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="header-actions btn-row">
+          <button class="theme-toggle" data-theme-toggle aria-label="Switch theme">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          </button>
+          <a class="btn btn-primary" href="tel:+919999999999">Call Now</a>
+        </div>
+        <button class="mobile-toggle" aria-label="Open menu" data-mobile-toggle>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </button>
+        <div class="mobile-panel" data-mobile-panel>
+          <a href="#services">Services</a>
+          <a href="#properties">Properties</a>
+          <a href="#about">About</a>
+          <a href="#faq">FAQ</a>
+          <a href="#contact">Contact</a>
+          <a class="btn btn-primary" href="tel:+919999999999">Call Now</a>
+          <a class="btn btn-outline" href="https://wa.me/919999999999" target="_blank" rel="noopener noreferrer">WhatsApp Now</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="hero-copy" data-animate>
+          <span class="eyebrow">Trusted Local Property Dealer</span>
+          <h1>Your Trusted Property Partner – Buy, Sell &amp; Invest with Confidence</h1>
+          <p>Helping families and investors find the right property at the right price with transparent deals, verified options, and fast consultation support from SHRI BALAJI PROPERTY DEALER.</p>
+          <div class="btn-row hero-actions">
+            <a class="btn btn-primary" href="tel:+919999999999">Call Now</a>
+            <a class="btn btn-secondary" href="https://wa.me/919999999999" target="_blank" rel="noopener noreferrer">WhatsApp Now</a>
+            <a class="btn btn-gold" href="#lead-form">Book Free Consultation</a>
+          </div>
+          <div class="hero-points">
+            <div><strong>Verified property opportunities</strong><span>Residential, commercial, plots, and investor-ready deals.</span></div>
+            <div><strong>Local market expertise</strong><span>Focused guidance for buyers, sellers, landlords, and investors.</span></div>
+            <div><strong>Faster response</strong><span>One tap to call, WhatsApp, or request a property consultation.</span></div>
+            <div><strong>Deal support</strong><span>From search to site visit, pricing, and paperwork assistance.</span></div>
+          </div>
+        </div>
+        <aside class="hero-card" aria-label="Featured luxury properties" data-animate>
+          <div class="slider" data-slider>
+            <div class="slide active" style="background-image:url('https://picsum.photos/seed/villaestate/900/1100');"></div>
+            <div class="slide" style="background-image:url('https://picsum.photos/seed/plotestate/900/1100');"></div>
+            <div class="slide" style="background-image:url('https://picsum.photos/seed/officespace/900/1100');"></div>
+            <div class="slider-badges">
+              <span>Luxury Homes</span><span>Prime Plots</span><span>Commercial Deals</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <span class="eyebrow">Trust Indicators</span>
+        <h2 class="section-title" data-animate>Built on trust, speed, and strong local market presence.</h2>
+        <div class="stats-grid">
+          <article class="stat-card" data-animate><h3>5+ Years</h3><p>Experience in property buying, selling, renting, and investor advisory.</p></article>
+          <article class="stat-card" data-animate><h3>500+</h3><p>Happy clients served with smooth and transparent deal support.</p></article>
+          <article class="stat-card" data-animate><h3>1000+</h3><p>Properties sold across residential, plot, and commercial categories.</p></article>
+          <article class="stat-card" data-animate><h3>Local Trust</h3><p>Recognized as a reliable property dealer for practical and timely guidance.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="container">
+        <span class="eyebrow">Core Services</span>
+        <h2 class="section-title" data-animate>Everything you need to move from inquiry to successful property decision.</h2>
+        <p class="section-copy" data-animate>Each service is positioned to reduce confusion, build confidence, and increase direct calls or WhatsApp inquiries from serious buyers and sellers.</p>
+        <div class="service-grid">
+          <article class="service-card" data-animate><div class="icon-box">🏠</div><h3>Buy Property</h3><p>Find verified homes, flats, villas, and family-ready properties within your target location and budget.</p></article>
+          <article class="service-card" data-animate><div class="icon-box">💼</div><h3>Sell Property</h3><p>Get better visibility, serious buyers, and negotiation support to sell faster and more confidently.</p></article>
+          <article class="service-card" data-animate><div class="icon-box">🔑</div><h3>Rent Property</h3><p>Connect tenants and landlords through smoother discovery, screening, and practical pricing support.</p></article>
+          <article class="service-card" data-animate><div class="icon-box">🏢</div><h3>Commercial Property</h3><p>Showrooms, offices, and investment-oriented commercial spaces matched to business goals.</p></article>
+          <article class="service-card" data-animate><div class="icon-box">📍</div><h3>Plot &amp; Land Deals</h3><p>Explore land opportunities for home construction, long-term appreciation, or resale planning.</p></article>
+          <article class="service-card" data-animate><div class="icon-box">📈</div><h3>Investment Consulting</h3><p>Make smarter real estate decisions with guidance on yield, location demand, and future value.</p></article>
+          <article class="service-card" data-animate><div class="icon-box">⚖️</div><h3>Legal Assistance</h3><p>Support for property paperwork, documentation flow, and transaction clarity through the process.</p></article>
+          <article class="service-card" data-animate><div class="icon-box">🤝</div><h3>End-to-End Support</h3><p>From shortlist to site visit, negotiation, and final deal coordination under one trusted team.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="properties">
+      <div class="container">
+        <span class="eyebrow">Featured Properties</span>
+        <h2 class="section-title" data-animate>Premium listings designed to trigger quick inquiries and quality lead conversion.</h2>
+        <div class="search-panel" data-animate>
+          <div class="search-grid">
+            <div class="field"><label for="searchKeyword">Property search</label><input id="searchKeyword" type="text" placeholder="Search by location or property type" /></div>
+            <div class="field"><label for="searchPurpose">Purpose</label><select id="searchPurpose"><option>Buy</option><option>Rent</option><option>Commercial</option><option>Plot</option></select></div>
+            <div class="field"><label for="searchBudget">Budget</label><select id="searchBudget"><option>Any Budget</option><option>Under ₹25L</option><option>₹25L - ₹50L</option><option>₹50L - ₹1Cr</option><option>Above ₹1Cr</option></select></div>
+            <div class="field"><label for="searchType">Property Type</label><select id="searchType"><option>Any Type</option><option>House</option><option>Plot</option><option>Office</option><option>Shop</option></select></div>
+            <div class="field" style="align-self:end;"><button class="btn btn-primary" id="searchBtn">Search</button></div>
+          </div>
+        </div>
+        <div class="property-controls">
+          <div class="filter-bar">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="buy">Buy</button>
+            <button class="filter-btn" data-filter="rent">Rent</button>
+            <button class="filter-btn" data-filter="commercial">Commercial</button>
+            <button class="filter-btn" data-filter="plot">Plot</button>
+          </div>
+          <a href="#lead-form" class="btn btn-outline">Request Matching Property</a>
+        </div>
+        <div class="properties-grid" id="propertyGrid">
+          <article class="property-card" data-category="buy" data-animate>
+            <div class="property-media"><img src="https://picsum.photos/seed/luxuryhome1/800/600" alt="Luxury residential house exterior" width="800" height="600" loading="lazy"><span class="tag property-type">Buy</span></div>
+            <div class="property-body"><div class="price-row"><strong>₹58 Lakh</strong><span class="tag">Verified</span></div><h3>Premium Family Home</h3><p class="property-meta">Location: Prime residential zone</p><div class="property-features"><span>Area: 1650 sq ft</span><span>3 Bedrooms</span><span>Ready to move</span></div><div class="btn-row" style="margin-top:1rem;"><a class="btn btn-primary" href="#lead-form">View Details</a></div></div>
+          </article>
+          <article class="property-card" data-category="rent" data-animate>
+            <div class="property-media"><img src="https://picsum.photos/seed/rentalflat2/800/600" alt="Modern rental apartment interior" width="800" height="600" loading="lazy"><span class="tag property-type">Rent</span></div>
+            <div class="property-body"><div class="price-row"><strong>₹18,000 / month</strong><span class="tag">Hot Lead</span></div><h3>Modern Rental Apartment</h3><p class="property-meta">Location: Well-connected family locality</p><div class="property-features"><span>Area: 1100 sq ft</span><span>2 Bedrooms</span><span>Immediate possession</span></div><div class="btn-row" style="margin-top:1rem;"><a class="btn btn-primary" href="#lead-form">View Details</a></div></div>
+          </article>
+          <article class="property-card" data-category="commercial" data-animate>
+            <div class="property-media"><img src="https://picsum.photos/seed/commercialspace3/800/600" alt="Commercial office building" width="800" height="600" loading="lazy"><span class="tag property-type">Commercial</span></div>
+            <div class="property-body"><div class="price-row"><strong>₹1.25 Cr</strong><span class="tag">Business Ready</span></div><h3>Office &amp; Retail Space</h3><p class="property-meta">Location: High visibility market road</p><div class="property-features"><span>Area: 2200 sq ft</span><span>Parking</span><span>High footfall</span></div><div class="btn-row" style="margin-top:1rem;"><a class="btn btn-primary" href="#lead-form">View Details</a></div></div>
+          </article>
+          <article class="property-card" data-category="plot" data-animate>
+            <div class="property-media"><img src="https://picsum.photos/seed/plotdeal4/800/600" alt="Open residential plot" width="800" height="600" loading="lazy"><span class="tag property-type">Plot</span></div>
+            <div class="property-body"><div class="price-row"><strong>₹32 Lakh</strong><span class="tag">Investment Pick</span></div><h3>Growth Potential Plot</h3><p class="property-meta">Location: Expanding development corridor</p><div class="property-features"><span>Area: 180 sq yd</span><span>Corner plot</span><span>Registry support</span></div><div class="btn-row" style="margin-top:1rem;"><a class="btn btn-primary" href="#lead-form">View Details</a></div></div>
+          </article>
+          <article class="property-card" data-category="buy" data-animate>
+            <div class="property-media"><img src="https://picsum.photos/seed/villaestate5/800/600" alt="Elegant villa exterior" width="800" height="600" loading="lazy"><span class="tag property-type">Buy</span></div>
+            <div class="property-body"><div class="price-row"><strong>₹92 Lakh</strong><span class="tag">Premium</span></div><h3>Elegant Independent Villa</h3><p class="property-meta">Location: Premium gated neighborhood</p><div class="property-features"><span>Area: 2400 sq ft</span><span>4 Bedrooms</span><span>Luxury finish</span></div><div class="btn-row" style="margin-top:1rem;"><a class="btn btn-primary" href="#lead-form">View Details</a></div></div>
+          </article>
+          <article class="property-card" data-category="commercial" data-animate>
+            <div class="property-media"><img src="https://picsum.photos/seed/shopdeal6/800/600" alt="Commercial shop frontage" width="800" height="600" loading="lazy"><span class="tag property-type">Commercial</span></div>
+            <div class="property-body"><div class="price-row"><strong>₹45 Lakh</strong><span class="tag">Retail Spot</span></div><h3>Ground Floor Shop</h3><p class="property-meta">Location: Main market frontage</p><div class="property-features"><span>Area: 450 sq ft</span><span>Main road</span><span>Rental potential</span></div><div class="btn-row" style="margin-top:1rem;"><a class="btn btn-primary" href="#lead-form">View Details</a></div></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <span class="eyebrow">Why Choose Us</span>
+        <h2 class="section-title" data-animate>Clients stay confident because every deal is handled with clarity and practical support.</h2>
+        <div class="reason-wrap">
+          <div class="reason-visual" data-animate>
+            <span class="tag">Premium. Transparent. Responsive.</span>
+            <h3>Property decisions feel easier when the guidance is honest.</h3>
+            <p>SHRI BALAJI PROPERTY DEALER combines verified opportunities, responsive communication, and end-to-end guidance to improve trust and conversion at every stage.</p>
+          </div>
+          <div class="reasons-grid">
+            <article class="reason-card" data-animate><div class="icon-box">✓</div><h3>Transparent Deals</h3><p>Clear conversation, realistic pricing, and no confusion-driven pressure tactics.</p></article>
+            <article class="reason-card" data-animate><div class="icon-box">🛡</div><h3>Verified Properties</h3><p>Focused screening and practical shortlisting to improve confidence.</p></article>
+            <article class="reason-card" data-animate><div class="icon-box">₹</div><h3>Best Market Price</h3><p>Better price understanding backed by local knowledge and market sense.</p></article>
+            <article class="reason-card" data-animate><div class="icon-box">⚡</div><h3>Fast Response</h3><p>Quick callback, WhatsApp follow-up, and consultation-first lead handling.</p></article>
+            <article class="reason-card" data-animate><div class="icon-box">👔</div><h3>Professional Support</h3><p>A premium customer experience that keeps communication structured and helpful.</p></article>
+            <article class="reason-card" data-animate><div class="icon-box">🧭</div><h3>End-to-End Guidance</h3><p>Support across inquiry, site visit, negotiation, and process coordination.</p></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <span class="eyebrow">Client Reviews</span>
+        <h2 class="section-title" data-animate>Real testimonials presented in a premium rotating review slider.</h2>
+        <div class="testimonials-wrap" data-animate>
+          <div class="testimonials-track" id="testimonialTrack">
+            <article class="testimonial-card"><div class="stars">★★★★★</div><p>“Superb staff, owner, dealing and places… too good.”</p><strong style="display:block;margin-top:1rem;">Agarwal Ajay</strong></article>
+            <article class="testimonial-card"><div class="stars">★★★★★</div><p>“They provided such a good land at a reasonable price.”</p><strong style="display:block;margin-top:1rem;">Manish Kumar</strong></article>
+            <article class="testimonial-card"><div class="stars">★★★★★</div><p>“Quick response, very professional, good work.”</p><strong style="display:block;margin-top:1rem;">Prateek Agrawal</strong></article>
+            <article class="testimonial-card"><div class="stars">★★★★★</div><p>“Nice work.”</p><strong style="display:block;margin-top:1rem;">Prashant Garg</strong></article>
+            <article class="testimonial-card"><div class="stars">★★★★★</div><p>“Positive: Responsiveness, Quality, Professionalism, Value.”</p><strong style="display:block;margin-top:1rem;">Pranay A</strong></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container">
+        <span class="eyebrow">About Owner</span>
+        <h2 class="section-title" data-animate>Meet Naveen Sharma, the face behind trusted property guidance.</h2>
+        <div class="owner-section-grid">
+          <div class="owner-photo" role="img" aria-label="Owner image placeholder for Naveen Sharma" data-animate></div>
+          <article class="owner-card" data-animate>
+            <span class="tag">Owner · Naveen Sharma</span>
+            <h3 style="margin-top:1rem;">Dedicated to helping clients make smart and profitable property decisions.</h3>
+            <p>Present this section as a credibility builder with an approachable owner profile, premium photo block, and client-first positioning that strengthens trust before form submission.</p>
+            <blockquote>“Dedicated to helping clients make smart and profitable property decisions.”</blockquote>
+            <div class="btn-row" style="margin-top:1.5rem;">
+              <a class="btn btn-primary" href="#lead-form">Talk to Naveen Sharma</a>
+              <a class="btn btn-outline" href="https://wa.me/919999999999" target="_blank" rel="noopener noreferrer">WhatsApp Direct</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="lead-form">
+      <div class="container">
+        <span class="eyebrow">Lead Capture</span>
+        <h2 class="section-title" data-animate>Capture serious buyer and seller inquiries with a clean, high-converting form.</h2>
+        <div class="lead-grid">
+          <article class="lead-card" data-animate>
+            <h3>Get Free Property Consultation</h3>
+            <p>Use this section to collect warm leads from homepage traffic while keeping the interaction short, mobile-friendly, and action focused.</p>
+            <form class="form-grid" id="inquiryForm">
+              <div class="field"><label for="name">Name</label><input id="name" name="name" type="text" placeholder="Enter full name" required></div>
+              <div class="field"><label for="phone">Phone</label><input id="phone" name="phone" type="tel" placeholder="Enter phone number" required></div>
+              <div class="field"><label for="propertyType">Property Type</label><select id="propertyType" name="propertyType"><option>Buy Property</option><option>Sell Property</option><option>Rent Property</option><option>Commercial Property</option><option>Plot & Land Deals</option><option>Property Investment Consulting</option></select></div>
+              <div class="field"><label for="budget">Budget</label><input id="budget" name="budget" type="text" placeholder="Enter budget range"></div>
+              <div class="field full"><label for="message">Message</label><textarea id="message" name="message" placeholder="Tell us what kind of property you are looking for"></textarea></div>
+              <div class="field full"><button type="submit" class="btn btn-primary">Get Free Property Consultation</button></div>
+            </form>
+          </article>
+          <div class="extras-grid">
+            <article class="calc-card" data-animate>
+              <h3>Mortgage Calculator</h3>
+              <p>Offer quick monthly EMI guidance to keep buyers engaged longer and move them closer to inquiry.</p>
+              <div class="form-grid" style="margin-top:1rem; grid-template-columns:1fr;">
+                <div class="field"><label for="loanAmount">Loan Amount</label><input id="loanAmount" type="number" placeholder="5000000"></div>
+                <div class="field"><label for="interestRate">Interest Rate %</label><input id="interestRate" type="number" step="0.1" placeholder="8.5"></div>
+                <div class="field"><label for="loanYears">Loan Tenure (Years)</label><input id="loanYears" type="number" placeholder="20"></div>
+                <div class="field"><button class="btn btn-outline" id="calculateBtn" type="button">Calculate EMI</button></div>
+              </div>
+              <div class="calc-results" id="calcResults">
+                <strong>Estimated EMI: —</strong>
+                <span>Total Interest: —</span>
+                <span>Total Payment: —</span>
+              </div>
+            </article>
+            <article class="calc-card" data-animate>
+              <h3>Lead Conversion Boosters</h3>
+              <p>Use these supporting blocks to increase trust and urgency without needing backend integration.</p>
+              <ul style="margin-top:1rem; list-style:none; display:grid; gap:.8rem; color:var(--color-text-muted);">
+                <li>• Sticky WhatsApp and call buttons on every screen.</li>
+                <li>• Inquiry popup after 20 seconds to recover hesitant visitors.</li>
+                <li>• Exit-intent popup for last-chance consultation capture.</li>
+                <li>• SEO-ready sections for local real estate discovery.</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="container">
+        <span class="eyebrow">FAQ</span>
+        <h2 class="section-title" data-animate>Answer buyer and seller questions before they become objections.</h2>
+        <div class="faq-grid">
+          <article class="faq-item" data-animate><h3>What kinds of properties do you handle?</h3><p>Residential homes, flats, rental properties, commercial spaces, plots, and land investment opportunities.</p></article>
+          <article class="faq-item" data-animate><h3>Can I get help selling my property quickly?</h3><p>Yes, the website positions SHRI BALAJI PROPERTY DEALER as a partner for listing exposure, buyer matching, and negotiation support.</p></article>
+          <article class="faq-item" data-animate><h3>Do you assist with legal and paperwork support?</h3><p>Yes, legal assistance is included in the service stack to improve clarity and trust during transactions.</p></article>
+          <article class="faq-item" data-animate><h3>How can customers contact you fastest?</h3><p>Through click-to-call, sticky call button, direct WhatsApp, or the free consultation inquiry form.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <span class="eyebrow">Blog & News</span>
+        <h2 class="section-title" data-animate>Add a content layer that improves SEO and builds local authority.</h2>
+        <div class="blog-grid">
+          <article class="blog-card" data-animate><img src="https://picsum.photos/seed/blogestate1/800/500" alt="Property market article cover" width="800" height="500" loading="lazy"><span class="tag">Market Update</span><h3 style="margin-top:1rem;">How to choose the right plot for future appreciation</h3><p>Use educational articles like this to build credibility and attract search traffic.</p></article>
+          <article class="blog-card" data-animate><img src="https://picsum.photos/seed/blogestate2/800/500" alt="Home buying guide article cover" width="800" height="500" loading="lazy"><span class="tag">Buyer Guide</span><h3 style="margin-top:1rem;">5 things to verify before buying a family home</h3><p>Strong evergreen content helps explain expertise while keeping readers engaged longer.</p></article>
+          <article class="blog-card" data-animate><img src="https://picsum.photos/seed/blogestate3/800/500" alt="Commercial property article cover" width="800" height="500" loading="lazy"><span class="tag">Investment</span><h3 style="margin-top:1rem;">Commercial property signals smart investors watch closely</h3><p>Educational posts can move visitors from research stage to consultation stage.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container">
+        <span class="eyebrow">Contact</span>
+        <h2 class="section-title" data-animate>Make calling, messaging, and visiting effortless.</h2>
+        <div class="contact-grid">
+          <article class="contact-card" data-animate>
+            <h3>Contact SHRI BALAJI PROPERTY DEALER</h3>
+            <p>Replace placeholder contact details below with your final business information before publishing.</p>
+            <ul class="contact-list">
+              <li><strong>Phone:</strong> <span><a href="tel:+919999999999">+91 99999 99999</a></span></li>
+              <li><strong>WhatsApp:</strong> <span><a href="https://wa.me/919999999999" target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a></span></li>
+              <li><strong>Business Hours:</strong> <span>Mon - Sat · 9:00 AM to 8:00 PM</span></li>
+              <li><strong>Address:</strong> <span>Business address placeholder, update with exact office location</span></li>
+            </ul>
+            <div class="btn-row" style="margin-top:1.5rem;">
+              <a class="btn btn-primary" href="tel:+919999999999">Click to Call</a>
+              <a class="btn btn-outline" href="https://wa.me/919999999999" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+            </div>
+          </article>
+          <div class="map-card" data-animate>
+            <iframe class="map-frame" title="Google map placeholder" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Agra%2C%20Uttar%20Pradesh&z=13&output=embed"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> SHRI BALAJI PROPERTY DEALER. All rights reserved.</p>
+      <p>SEO optimized real estate landing page with lead-first UX, premium visuals, and mobile-ready interaction.</p>
+    </div>
+  </footer>
+
+  <div class="floating-actions" aria-label="Quick contact actions">
+    <a class="float-btn float-whatsapp" href="https://wa.me/919999999999" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.52 3.48A11.86 11.86 0 0 0 12.08 0C5.52 0 .2 5.3.2 11.84c0 2.09.55 4.13 1.59 5.92L0 24l6.41-1.67a11.9 11.9 0 0 0 5.67 1.45h.01c6.56 0 11.89-5.31 11.89-11.85 0-3.16-1.23-6.13-3.46-8.45ZM12.09 21.76h-.01a9.9 9.9 0 0 1-5.03-1.37l-.36-.21-3.8.99 1.02-3.7-.24-.38a9.83 9.83 0 0 1-1.51-5.25c0-5.44 4.45-9.87 9.92-9.87 2.65 0 5.13 1.03 7 2.89a9.8 9.8 0 0 1 2.91 6.98c0 5.44-4.46 9.87-9.9 9.87Zm5.42-7.39c-.3-.15-1.79-.88-2.07-.98-.28-.1-.48-.15-.68.15-.2.3-.78.98-.96 1.18-.18.2-.35.23-.65.08-.3-.15-1.27-.47-2.42-1.49-.9-.8-1.5-1.78-1.68-2.08-.18-.3-.02-.46.13-.61.13-.13.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.02-.53-.08-.15-.68-1.64-.93-2.25-.24-.57-.49-.5-.68-.51h-.58c-.2 0-.53.08-.8.38-.28.3-1.05 1.03-1.05 2.5s1.08 2.89 1.23 3.1c.15.2 2.12 3.24 5.14 4.54.72.31 1.28.5 1.72.63.72.23 1.37.2 1.88.12.57-.08 1.79-.73 2.04-1.43.25-.7.25-1.3.18-1.43-.08-.12-.28-.2-.58-.35Z"/></svg>
+    </a>
+    <a class="float-btn float-call" href="tel:+919999999999" aria-label="Call now">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.35 1.78.68 2.62a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.46-1.25a2 2 0 0 1 2.11-.45c.84.33 1.72.56 2.62.68A2 2 0 0 1 22 16.92z"/></svg>
+    </a>
+  </div>
+
+  <div class="popup-overlay" id="leadPopup" aria-hidden="true">
+    <div class="popup-card">
+      <button class="popup-close" id="popupClose" aria-label="Close popup">✕</button>
+      <span class="eyebrow">Free Consultation</span>
+      <h3 class="section-title" style="font-size:var(--text-xl); margin-top:1rem;">Looking for the right property deal?</h3>
+      <p class="section-copy">Call or WhatsApp SHRI BALAJI PROPERTY DEALER now to get quick assistance on buying, renting, plots, or commercial opportunities.</p>
+      <div class="btn-row" style="margin-top:1.5rem;">
+        <a class="btn btn-primary" href="tel:+919999999999">Call Now</a>
+        <a class="btn btn-outline" href="https://wa.me/919999999999" target="_blank" rel="noopener noreferrer">WhatsApp Now</a>
+      </div>
+    </div>
+  </div>
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "SHRI BALAJI PROPERTY DEALER",
+      "description": "Trusted real estate and property dealing business helping customers buy, sell, rent, and invest in properties.",
+      "telephone": "+91 99999 99999",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Address placeholder",
+        "addressLocality": "Agra",
+        "addressRegion": "Uttar Pradesh",
+        "addressCountry": "IN"
+      },
+      "areaServed": "Agra",
+      "url": "#",
+      "founder": "Naveen Sharma",
+      "openingHours": "Mo-Sa 09:00-20:00",
+      "sameAs": ["https://wa.me/919999999999"]
+    }
+  </script>
+
+  <script>
+    const html = document.documentElement;
+    const themeToggle = document.querySelector('[data-theme-toggle]');
+    let theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    html.setAttribute('data-theme', theme);
+    const setThemeIcon = () => {
+      themeToggle.innerHTML = theme === 'dark'
+        ? '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>'
+        : '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+    };
+    setThemeIcon();
+    themeToggle?.addEventListener('click', () => {
+      theme = theme === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', theme);
+      setThemeIcon();
+    });
+
+    const mobileToggle = document.querySelector('[data-mobile-toggle]');
+    const mobilePanel = document.querySelector('[data-mobile-panel]');
+    mobileToggle?.addEventListener('click', () => mobilePanel.classList.toggle('active'));
+    mobilePanel?.querySelectorAll('a').forEach(link => link.addEventListener('click', () => mobilePanel.classList.remove('active')));
+
+    const slides = document.querySelectorAll('.slide');
+    let slideIndex = 0;
+    setInterval(() => {
+      slides[slideIndex].classList.remove('active');
+      slideIndex = (slideIndex + 1) % slides.length;
+      slides[slideIndex].classList.add('active');
+    }, 4000);
+
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const propertyCards = document.querySelectorAll('.property-card');
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+        const filter = button.dataset.filter;
+        propertyCards.forEach(card => {
+          card.style.display = filter === 'all' || card.dataset.category === filter ? '' : 'none';
+        });
+      });
+    });
+
+    document.getElementById('searchBtn')?.addEventListener('click', () => {
+      const selected = document.getElementById('searchPurpose').value.toLowerCase();
+      const matching = [...filterButtons].find(btn => btn.dataset.filter === selected) || filterButtons[0];
+      matching.click();
+      document.getElementById('properties').scrollIntoView({ behavior: 'smooth' });
+    });
+
+    const track = document.getElementById('testimonialTrack');
+    let testimonialIndex = 0;
+    const testimonialStep = () => {
+      const cards = track.children.length;
+      const perView = window.innerWidth <= 760 ? 1 : window.innerWidth <= 1100 ? 2 : 3;
+      testimonialIndex = (testimonialIndex + 1) % Math.max(cards - perView + 1, 1);
+      const shift = window.innerWidth <= 760 ? track.parentElement.offsetWidth : track.children[0].offsetWidth + 16;
+      track.style.transform = `translateX(-${testimonialIndex * shift}px)`;
+    };
+    setInterval(testimonialStep, 3500);
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.16 });
+    document.querySelectorAll('[data-animate]').forEach(el => observer.observe(el));
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    document.getElementById('calculateBtn')?.addEventListener('click', () => {
+      const loan = parseFloat(document.getElementById('loanAmount').value) || 0;
+      const annualRate = parseFloat(document.getElementById('interestRate').value) || 0;
+      const years = parseFloat(document.getElementById('loanYears').value) || 0;
+      const results = document.getElementById('calcResults');
+      if (!loan || !annualRate || !years) {
+        results.innerHTML = '<strong>Estimated EMI: Enter all fields</strong><span>Total Interest: —</span><span>Total Payment: —</span>';
+        return;
+      }
+      const monthlyRate = annualRate / 12 / 100;
+      const months = years * 12;
+      const emi = loan * monthlyRate * Math.pow(1 + monthlyRate, months) / (Math.pow(1 + monthlyRate, months) - 1);
+      const totalPayment = emi * months;
+      const totalInterest = totalPayment - loan;
+      const format = value => new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', maximumFractionDigits: 0 }).format(value);
+      results.innerHTML = `<strong>Estimated EMI: ${format(emi)}</strong><span>Total Interest: ${format(totalInterest)}</span><span>Total Payment: ${format(totalPayment)}</span>`;
+    });
+
+    document.getElementById('inquiryForm')?.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const data = new FormData(event.target);
+      const name = encodeURIComponent(data.get('name') || 'Customer');
+      const phone = encodeURIComponent(data.get('phone') || '');
+      const propertyType = encodeURIComponent(data.get('propertyType') || '');
+      const budget = encodeURIComponent(data.get('budget') || '');
+      const message = encodeURIComponent(data.get('message') || '');
+      const text = `Hello, I want a free property consultation.%0AName: ${name}%0APhone: ${phone}%0AProperty Type: ${propertyType}%0ABudget: ${budget}%0AMessage: ${message}`;
+      window.open(`https://wa.me/919999999999?text=${text}`, '_blank', 'noopener');
+    });
+
+    const popup = document.getElementById('leadPopup');
+    const popupClose = document.getElementById('popupClose');
+    let popupShown = false;
+    const showPopup = () => {
+      if (popupShown) return;
+      popupShown = true;
+      popup.classList.add('active');
+      popup.setAttribute('aria-hidden', 'false');
+    };
+    setTimeout(showPopup, 20000);
+    popupClose?.addEventListener('click', () => { popup.classList.remove('active'); popup.setAttribute('aria-hidden', 'true'); });
+    popup?.addEventListener('click', (e) => { if (e.target === popup) { popup.classList.remove('active'); popup.setAttribute('aria-hidden', 'true'); } });
+    document.addEventListener('mouseout', (e) => {
+      if (e.clientY <= 0 && !popupShown) showPopup();
+    });
+  </script>
+</body>
+</html>
