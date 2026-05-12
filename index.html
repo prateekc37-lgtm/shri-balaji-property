@@ -164,6 +164,29 @@
     .hidden { display: none !important; }
     [data-animate] { opacity: 0; transform: translateY(28px); transition: opacity .7s ease, transform .7s ease; }
     [data-animate].visible { opacity: 1; transform: translateY(0); }
+    
+    .site-pages { position: relative; }
+    .page-view { display: none; }
+    .page-view.active { display: block; }
+    .nav-links a.active, .mobile-panel a.active { color: var(--color-primary); font-weight: 800; }
+    .page-hero { padding: clamp(var(--space-12), 7vw, var(--space-20)) 0 var(--space-8); background: linear-gradient(180deg, var(--color-surface-2), transparent); }
+    .page-hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-6); align-items: center; }
+    .page-hero-card { padding: var(--space-8); border-radius: var(--radius-xl); background: var(--color-surface); border: 1px solid var(--color-border); box-shadow: var(--shadow-md); }
+    .page-hero-card h1, .page-hero-card h2 { font-family: var(--font-display); font-size: var(--text-2xl); line-height: .98; }
+    .page-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-5); }
+    .timeline-card { padding: var(--space-6); border-radius: var(--radius-lg); background: var(--color-surface); border: 1px solid var(--color-border); box-shadow: var(--shadow-sm); }
+    .timeline-step { display: grid; grid-template-columns: 56px 1fr; gap: var(--space-4); align-items: start; margin-top: var(--space-4); }
+    .timeline-step strong { width: 56px; height: 56px; border-radius: 50%; display: grid; place-items: center; background: linear-gradient(135deg, rgba(10,35,66,0.12), rgba(212,175,55,0.18)); color: var(--color-primary); }
+    .info-list { list-style: none; display: grid; gap: var(--space-3); color: var(--color-text-muted); margin-top: var(--space-5); }
+    .gallery-mosaic { display: grid; grid-template-columns: 1.1fr .9fr .9fr; gap: var(--space-4); margin-top: var(--space-8); }
+    .gallery-mosaic article { overflow: hidden; border-radius: var(--radius-xl); min-height: 260px; position: relative; box-shadow: var(--shadow-md); }
+    .gallery-mosaic article:first-child { grid-row: span 2; min-height: 540px; }
+    .gallery-mosaic img { width: 100%; height: 100%; object-fit: cover; }
+    .gallery-mosaic .overlay { position: absolute; inset: auto 0 0 0; padding: var(--space-5); color: #fff; background: linear-gradient(180deg, transparent, rgba(9,17,29,.86)); }
+    .cta-banner { padding: var(--space-8); border-radius: var(--radius-xl); background: linear-gradient(135deg, rgba(10,35,66,.98), rgba(24,59,106,.92)); color: #fff; box-shadow: var(--shadow-lg); }
+    @media (max-width:1100px){ .page-hero-grid,.page-grid-2,.gallery-mosaic{grid-template-columns:1fr 1fr;} .gallery-mosaic article:first-child{grid-row:span 1; min-height:320px;} }
+    @media (max-width:760px){ .page-hero-grid,.page-grid-2,.gallery-mosaic{grid-template-columns:1fr;} }
+
     @media (max-width: 1100px) {
       .hero-grid, .reason-wrap, .owner-section-grid, .lead-grid, .contact-grid { grid-template-columns: 1fr; }
       .stats-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
@@ -208,14 +231,14 @@
       </a>
       <nav class="nav" aria-label="Primary navigation">
         <div class="nav-links">
-          <a href="#services">Services</a>
-          <a href="#properties">Properties</a>
-          <a href="#about">About</a>
-          <a href="#buyers-guide">Buyer Guide</a>
-          <a href="#investment">Investment</a>
-          <a href="#gallery">Gallery</a>
-          <a href="#faq">FAQ</a>
-          <a href="#contact">Contact</a>
+          <a href="#page-home" data-nav-page="home">Services</a>
+          <a href="#page-home" data-nav-page="home">Properties</a>
+          <a href="#page-about" data-nav-page="about">About</a>
+          <a href="#page-investment" data-nav-page="investment">Buyer Guide</a>
+          <a href="#page-investment" data-nav-page="investment">Investment</a>
+          <a href="#page-gallery" data-nav-page="gallery">Gallery</a>
+          <a href="#page-contact" data-nav-page="contact">FAQ</a>
+          <a href="#page-contact" data-nav-page="contact">Contact</a>
         </div>
         <div class="header-actions btn-row">
           <button class="theme-toggle" data-theme-toggle aria-label="Switch theme">
@@ -226,336 +249,78 @@
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
         </button>
         <div class="mobile-panel" data-mobile-panel>
-          <a href="#services">Services</a>
-          <a href="#properties">Properties</a>
-          <a href="#about">About</a>
-          <a href="#buyers-guide">Buyer Guide</a>
-          <a href="#investment">Investment</a>
-          <a href="#gallery">Gallery</a>
-          <a href="#faq">FAQ</a>
-          <a href="#contact">Contact</a>
+          <a href="#page-home" data-nav-page="home">Services</a>
+          <a href="#page-home" data-nav-page="home">Properties</a>
+          <a href="#page-about" data-nav-page="about">About</a>
+          <a href="#page-investment" data-nav-page="investment">Buyer Guide</a>
+          <a href="#page-investment" data-nav-page="investment">Investment</a>
+          <a href="#page-gallery" data-nav-page="gallery">Gallery</a>
+          <a href="#page-contact" data-nav-page="contact">FAQ</a>
+          <a href="#page-contact" data-nav-page="contact">Contact</a>
           <a class="btn btn-outline" href="https://wa.me/919999999999" target="_blank" rel="noopener noreferrer">WhatsApp Now</a>
         </div>
       </nav>
     </div>
   </header>
 
-  <main id="main">
-    <section class="hero" id="home">
-      <div class="container hero-grid">
-        <div class="hero-copy" data-animate>
-          <span class="eyebrow">Trusted Local Property Dealer</span>
-          <h1>Your Reliable Real Estate Advisor for Premium Property Deals</h1>
-          <p>Helping families and investors find the right property at the right price with transparent deals, verified options, and fast consultation support from SHRI BALAJI PROPERTY DEALER.</p>
-          <div class="btn-row hero-actions">
-            <a class="btn btn-primary" href="tel:+919999999999">Call Now</a>
-            <a class="btn btn-secondary" href="https://wa.me/919999999999" target="_blank" rel="noopener noreferrer">WhatsApp Now</a>
-            <a class="btn btn-gold" href="#lead-form">Book Free Consultation</a>
-          </div>
-          <div class="hero-points">
-            <div><strong>Verified property opportunities</strong><span>Residential, commercial, plots, and investor-ready deals.</span></div>
-            <div><strong>Local market expertise</strong><span>Focused guidance for buyers, sellers, landlords, and investors.</span></div>
-            <div><strong>Faster response</strong><span>One tap to call, WhatsApp, or request a property consultation.</span></div>
-            <div><strong>Deal support</strong><span>From search to site visit, pricing, and paperwork assistance.</span></div>
-          </div>
-        </div>
-        <aside class="hero-card" aria-label="Featured luxury properties" data-animate>
-          <div class="slider" data-slider>
-            <div class="slide active" style="background-image:url('https://picsum.photos/seed/villaestate/900/1100');"></div>
-            <div class="slide" style="background-image:url('https://picsum.photos/seed/plotestate/900/1100');"></div>
-            <div class="slide" style="background-image:url('https://picsum.photos/seed/officespace/900/1100');"></div>
-            <div class="slider-badges">
-              <span>Luxury Homes</span><span>Prime Plots</span><span>Commercial Deals</span>
+  <main id="main" class="site-pages">
+    <section class="page-view active" id="page-home" data-page="home">
+      <section class="hero" id="home">
+        <div class="container hero-grid">
+          <div class="hero-copy" data-animate>
+            <span class="eyebrow">Trusted Local Property Dealer</span>
+            <h1>Your Reliable Real Estate Advisor for Premium Property Deals</h1>
+            <p>Helping families and investors find the right property at the right price with transparent deals, verified options, and fast consultation support from SHRI BALAJI PROPERTY DEALER.</p>
+            <div class="btn-row hero-actions">
+              <a class="btn btn-primary" href="tel:+919999999999">Call Now</a>
+              <a class="btn btn-secondary" href="https://wa.me/919999999999" target="_blank" rel="noopener noreferrer">WhatsApp Now</a>
+              <a class="btn btn-gold" href="#lead-form">Book Free Consultation</a>
+            </div>
+            <div class="hero-points">
+              <div><strong>Verified property opportunities</strong><span>Residential, commercial, plots, and investor-ready deals.</span></div>
+              <div><strong>Local market expertise</strong><span>Focused guidance for buyers, sellers, landlords, and investors.</span></div>
+              <div><strong>Faster response</strong><span>One tap to call, WhatsApp, or request a property consultation.</span></div>
+              <div><strong>Deal support</strong><span>From search to site visit, pricing, and paperwork assistance.</span></div>
             </div>
           </div>
-        </aside>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <span class="eyebrow">Trust Indicators</span>
-        <h2 class="section-title" data-animate>Built on trust, speed, and strong local market presence.</h2>
-        <div class="stats-grid">
-          <article class="stat-card" data-animate><h3>5+ Years</h3><p>Experience in property buying, selling, renting, and investor advisory.</p></article>
-          <article class="stat-card" data-animate><h3>500+</h3><p>Happy clients served with smooth and transparent deal support.</p></article>
-          <article class="stat-card" data-animate><h3>1000+</h3><p>Properties sold across residential, plot, and commercial categories.</p></article>
-          <article class="stat-card" data-animate><h3>Local Trust</h3><p>Recognized as a reliable property dealer for practical and timely guidance.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="services">
-      <div class="container">
-        <span class="eyebrow">Core Services</span>
-        <h2 class="section-title" data-animate>Everything you need to move from inquiry to successful property decision.</h2>
-        <p class="section-copy" data-animate>Each service is positioned to reduce confusion, build confidence, and increase direct calls or WhatsApp inquiries from serious buyers and sellers.</p>
-        <div class="service-grid">
-          <article class="service-card" data-animate><div class="icon-box">🏠</div><h3>Buy Property</h3><p>Find verified homes, flats, villas, and family-ready properties within your target location and budget.</p></article>
-          <article class="service-card" data-animate><div class="icon-box">💼</div><h3>Sell Property</h3><p>Get better visibility, serious buyers, and negotiation support to sell faster and more confidently.</p></article>
-          <article class="service-card" data-animate><div class="icon-box">🔑</div><h3>Rent Property</h3><p>Connect tenants and landlords through smoother discovery, screening, and practical pricing support.</p></article>
-          <article class="service-card" data-animate><div class="icon-box">🏢</div><h3>Commercial Property</h3><p>Showrooms, offices, and investment-oriented commercial spaces matched to business goals.</p></article>
-          <article class="service-card" data-animate><div class="icon-box">📍</div><h3>Plot &amp; Land Deals</h3><p>Explore land opportunities for home construction, long-term appreciation, or resale planning.</p></article>
-          <article class="service-card" data-animate><div class="icon-box">📈</div><h3>Investment Consulting</h3><p>Make smarter real estate decisions with guidance on yield, location demand, and future value.</p></article>
-          <article class="service-card" data-animate><div class="icon-box">⚖️</div><h3>Legal Assistance</h3><p>Support for property paperwork, documentation flow, and transaction clarity through the process.</p></article>
-          <article class="service-card" data-animate><div class="icon-box">🤝</div><h3>End-to-End Support</h3><p>From shortlist to site visit, negotiation, and final deal coordination under one trusted team.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="properties">
-      <div class="container">
-        <span class="eyebrow">Featured Properties</span>
-        <h2 class="section-title" data-animate>Premium listings designed to trigger quick inquiries and quality lead conversion.</h2>
-        <div class="search-panel" data-animate>
-          <div class="search-grid">
-            <div class="field"><label for="searchKeyword">Property search</label><input id="searchKeyword" type="text" placeholder="Search by location or property type" /></div>
-            <div class="field"><label for="searchPurpose">Purpose</label><select id="searchPurpose"><option>Buy</option><option>Rent</option><option>Commercial</option><option>Plot</option></select></div>
-            <div class="field"><label for="searchBudget">Budget</label><select id="searchBudget"><option>Any Budget</option><option>Under ₹25L</option><option>₹25L - ₹50L</option><option>₹50L - ₹1Cr</option><option>Above ₹1Cr</option></select></div>
-            <div class="field"><label for="searchType">Property Type</label><select id="searchType"><option>Any Type</option><option>House</option><option>Plot</option><option>Office</option><option>Shop</option></select></div>
-            <div class="field" style="align-self:end;"><button class="btn btn-primary" id="searchBtn">Search</button></div>
-          </div>
-        </div>
-        <div class="property-controls">
-          <div class="filter-bar">
-            <button class="filter-btn active" data-filter="all">All</button>
-            <button class="filter-btn" data-filter="buy">Buy</button>
-            <button class="filter-btn" data-filter="rent">Rent</button>
-            <button class="filter-btn" data-filter="commercial">Commercial</button>
-            <button class="filter-btn" data-filter="plot">Plot</button>
-          </div>
-          <a href="#lead-form" class="btn btn-outline">Request Matching Property</a>
-        </div>
-        <div class="properties-grid" id="propertyGrid">
-          <article class="property-card" data-category="buy" data-animate>
-            <div class="property-media"><img src="https://picsum.photos/seed/luxuryhome1/800/600" alt="Luxury residential house exterior" width="800" height="600" loading="lazy"><span class="tag property-type">Buy</span></div>
-            <div class="property-body"><div class="price-row"><strong>₹58 Lakh</strong><span class="tag">Verified</span></div><h3>Premium Family Home</h3><p class="property-meta">Location: Prime residential zone</p><div class="property-features"><span>Area: 1650 sq ft</span><span>3 Bedrooms</span><span>Ready to move</span></div><div class="btn-row" style="margin-top:1rem;"><a class="btn btn-primary" href="#lead-form">View Details</a></div></div>
-          </article>
-          <article class="property-card" data-category="rent" data-animate>
-            <div class="property-media"><img src="https://picsum.photos/seed/rentalflat2/800/600" alt="Modern rental apartment interior" width="800" height="600" loading="lazy"><span class="tag property-type">Rent</span></div>
-            <div class="property-body"><div class="price-row"><strong>₹18,000 / month</strong><span class="tag">Hot Lead</span></div><h3>Modern Rental Apartment</h3><p class="property-meta">Location: Well-connected family locality</p><div class="property-features"><span>Area: 1100 sq ft</span><span>2 Bedrooms</span><span>Immediate possession</span></div><div class="btn-row" style="margin-top:1rem;"><a class="btn btn-primary" href="#lead-form">View Details</a></div></div>
-          </article>
-          <article class="property-card" data-category="commercial" data-animate>
-            <div class="property-media"><img src="https://picsum.photos/seed/commercialspace3/800/600" alt="Commercial office building" width="800" height="600" loading="lazy"><span class="tag property-type">Commercial</span></div>
-            <div class="property-body"><div class="price-row"><strong>₹1.25 Cr</strong><span class="tag">Business Ready</span></div><h3>Office &amp; Retail Space</h3><p class="property-meta">Location: High visibility market road</p><div class="property-features"><span>Area: 2200 sq ft</span><span>Parking</span><span>High footfall</span></div><div class="btn-row" style="margin-top:1rem;"><a class="btn btn-primary" href="#lead-form">View Details</a></div></div>
-          </article>
-          <article class="property-card" data-category="plot" data-animate>
-            <div class="property-media"><img src="https://picsum.photos/seed/plotdeal4/800/600" alt="Open residential plot" width="800" height="600" loading="lazy"><span class="tag property-type">Plot</span></div>
-            <div class="property-body"><div class="price-row"><strong>₹32 Lakh</strong><span class="tag">Investment Pick</span></div><h3>Growth Potential Plot</h3><p class="property-meta">Location: Expanding development corridor</p><div class="property-features"><span>Area: 180 sq yd</span><span>Corner plot</span><span>Registry support</span></div><div class="btn-row" style="margin-top:1rem;"><a class="btn btn-primary" href="#lead-form">View Details</a></div></div>
-          </article>
-          <article class="property-card" data-category="buy" data-animate>
-            <div class="property-media"><img src="https://picsum.photos/seed/villaestate5/800/600" alt="Elegant villa exterior" width="800" height="600" loading="lazy"><span class="tag property-type">Buy</span></div>
-            <div class="property-body"><div class="price-row"><strong>₹92 Lakh</strong><span class="tag">Premium</span></div><h3>Elegant Independent Villa</h3><p class="property-meta">Location: Premium gated neighborhood</p><div class="property-features"><span>Area: 2400 sq ft</span><span>4 Bedrooms</span><span>Luxury finish</span></div><div class="btn-row" style="margin-top:1rem;"><a class="btn btn-primary" href="#lead-form">View Details</a></div></div>
-          </article>
-          <article class="property-card" data-category="commercial" data-animate>
-            <div class="property-media"><img src="https://picsum.photos/seed/shopdeal6/800/600" alt="Commercial shop frontage" width="800" height="600" loading="lazy"><span class="tag property-type">Commercial</span></div>
-            <div class="property-body"><div class="price-row"><strong>₹45 Lakh</strong><span class="tag">Retail Spot</span></div><h3>Ground Floor Shop</h3><p class="property-meta">Location: Main market frontage</p><div class="property-features"><span>Area: 450 sq ft</span><span>Main road</span><span>Rental potential</span></div><div class="btn-row" style="margin-top:1rem;"><a class="btn btn-primary" href="#lead-form">View Details</a></div></div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <span class="eyebrow">Why Choose Us</span>
-        <h2 class="section-title" data-animate>Clients stay confident because every deal is handled with clarity and practical support.</h2>
-        <div class="reason-wrap">
-          <div class="reason-visual" data-animate>
-            <span class="tag">Premium. Transparent. Responsive.</span>
-            <h3>Property decisions feel easier when the guidance is honest.</h3>
-            <p>SHRI BALAJI PROPERTY DEALER combines verified opportunities, responsive communication, and end-to-end guidance to improve trust and conversion at every stage.</p>
-          </div>
-          <div class="reasons-grid">
-            <article class="reason-card" data-animate><div class="icon-box">✓</div><h3>Transparent Deals</h3><p>Clear conversation, realistic pricing, and no confusion-driven pressure tactics.</p></article>
-            <article class="reason-card" data-animate><div class="icon-box">🛡</div><h3>Verified Properties</h3><p>Focused screening and practical shortlisting to improve confidence.</p></article>
-            <article class="reason-card" data-animate><div class="icon-box">₹</div><h3>Best Market Price</h3><p>Better price understanding backed by local knowledge and market sense.</p></article>
-            <article class="reason-card" data-animate><div class="icon-box">⚡</div><h3>Fast Response</h3><p>Quick callback, WhatsApp follow-up, and consultation-first lead handling.</p></article>
-            <article class="reason-card" data-animate><div class="icon-box">👔</div><h3>Professional Support</h3><p>A premium customer experience that keeps communication structured and helpful.</p></article>
-            <article class="reason-card" data-animate><div class="icon-box">🧭</div><h3>End-to-End Guidance</h3><p>Support across inquiry, site visit, negotiation, and process coordination.</p></article>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <span class="eyebrow">Client Reviews</span>
-        <h2 class="section-title" data-animate>Real testimonials presented in a premium rotating review slider.</h2>
-        <div class="testimonials-wrap" data-animate>
-          <div class="testimonials-track" id="testimonialTrack">
-            <article class="testimonial-card"><div class="stars">★★★★★</div><p>“Superb staff, owner, dealing and places… too good.”</p><strong style="display:block;margin-top:1rem;">Agarwal Ajay</strong></article>
-            <article class="testimonial-card"><div class="stars">★★★★★</div><p>“They provided such a good land at a reasonable price.”</p><strong style="display:block;margin-top:1rem;">Manish Kumar</strong></article>
-            <article class="testimonial-card"><div class="stars">★★★★★</div><p>“Quick response, very professional, good work.”</p><strong style="display:block;margin-top:1rem;">Prateek Agrawal</strong></article>
-            <article class="testimonial-card"><div class="stars">★★★★★</div><p>“Nice work.”</p><strong style="display:block;margin-top:1rem;">Prashant Garg</strong></article>
-            <article class="testimonial-card"><div class="stars">★★★★★</div><p>“Positive: Responsiveness, Quality, Professionalism, Value.”</p><strong style="display:block;margin-top:1rem;">Pranay A</strong></article>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="about">
-      <div class="container">
-        <span class="eyebrow">About Owner</span>
-        <h2 class="section-title" data-animate>Meet Naveen Sharma, the face behind trusted property guidance.</h2>
-        <div class="owner-section-grid">
-          <div class="owner-photo" role="img" aria-label="Owner image placeholder for Naveen Sharma" data-animate></div>
-          <article class="owner-card" data-animate>
-            <span class="tag">Owner · Naveen Sharma</span>
-            <h3 style="margin-top:1rem;">Dedicated to helping clients make smart and profitable property decisions.</h3>
-            <p>Present this section as a credibility builder with an approachable owner profile, premium photo block, and client-first positioning that strengthens trust before form submission.</p>
-            <blockquote>“Dedicated to helping clients make smart and profitable property decisions.”</blockquote>
-            <div class="btn-row" style="margin-top:1.5rem;">
-              <a class="btn btn-primary" href="#lead-form">Talk to Naveen Sharma</a>
-              <a class="btn btn-outline" href="https://wa.me/919999999999" target="_blank" rel="noopener noreferrer">WhatsApp Direct</a>
+          <aside class="hero-card" aria-label="Featured luxury properties" data-animate>
+            <div class="slider" data-slider>
+              <div class="slide active" style="background-image:url('https://picsum.photos/seed/villaestate/900/1100');"></div>
+              <div class="slide" style="background-image:url('https://picsum.photos/seed/plotestate/900/1100');"></div>
+              <div class="slide" style="background-image:url('https://picsum.photos/seed/officespace/900/1100');"></div>
+              <div class="slider-badges"><span>Luxury Homes</span><span>Prime Plots</span><span>Commercial Deals</span></div>
             </div>
-          </article>
+          </aside>
         </div>
-      </div>
+      </section>
+      <section class="section"><div class="container"><span class="eyebrow">Trust Indicators</span><h2 class="section-title" data-animate>Built on trust, speed, and strong local market presence.</h2><div class="stats-grid"><article class="stat-card" data-animate><h3>5+ Years</h3><p>Experience in property buying, selling, renting, and investor advisory.</p></article><article class="stat-card" data-animate><h3>500+</h3><p>Happy clients served with smooth and transparent deal support.</p></article><article class="stat-card" data-animate><h3>1000+</h3><p>Properties sold across residential, plot, and commercial categories.</p></article><article class="stat-card" data-animate><h3>Local Trust</h3><p>Recognized as a reliable property dealer for practical and timely guidance.</p></article></div></div></section>
+      <section class="section" id="services"><div class="container"><span class="eyebrow">Core Services</span><h2 class="section-title" data-animate>Everything you need to move from inquiry to successful property decision.</h2><p class="section-copy" data-animate>Each service is positioned to reduce confusion, build confidence, and increase direct calls or WhatsApp inquiries from serious buyers and sellers.</p><div class="service-grid"><article class="service-card" data-animate><div class="icon-box">🏠</div><h3>Buy Property</h3><p>Find verified homes, flats, villas, and family-ready properties within your target location and budget.</p></article><article class="service-card" data-animate><div class="icon-box">💼</div><h3>Sell Property</h3><p>Get better visibility, serious buyers, and negotiation support to sell faster and more confidently.</p></article><article class="service-card" data-animate><div class="icon-box">🔑</div><h3>Rent Property</h3><p>Connect tenants and landlords through smoother discovery, screening, and practical pricing support.</p></article><article class="service-card" data-animate><div class="icon-box">🏢</div><h3>Commercial Property</h3><p>Showrooms, offices, and investment-oriented commercial spaces matched to business goals.</p></article><article class="service-card" data-animate><div class="icon-box">📍</div><h3>Plot &amp; Land Deals</h3><p>Explore land opportunities for home construction, long-term appreciation, or resale planning.</p></article><article class="service-card" data-animate><div class="icon-box">📈</div><h3>Investment Consulting</h3><p>Make smarter real estate decisions with guidance on yield, location demand, and future value.</p></article><article class="service-card" data-animate><div class="icon-box">⚖️</div><h3>Legal Assistance</h3><p>Support for property paperwork, documentation flow, and transaction clarity through the process.</p></article><article class="service-card" data-animate><div class="icon-box">🤝</div><h3>End-to-End Support</h3><p>From shortlist to site visit, negotiation, and final deal coordination under one trusted team.</p></article></div></div></section>
+      <section class="section" id="properties"><div class="container"><span class="eyebrow">Featured Properties</span><h2 class="section-title" data-animate>Premium listings designed to trigger quick inquiries and quality lead conversion.</h2><div class="search-panel" data-animate><div class="search-grid"><div class="field"><label for="searchKeyword">Property search</label><input id="searchKeyword" type="text" placeholder="Search by location or property type" /></div><div class="field"><label for="searchPurpose">Purpose</label><select id="searchPurpose"><option>Buy</option><option>Rent</option><option>Commercial</option><option>Plot</option></select></div><div class="field"><label for="searchBudget">Budget</label><select id="searchBudget"><option>Any Budget</option><option>Under ₹25L</option><option>₹25L - ₹50L</option><option>₹50L - ₹1Cr</option><option>Above ₹1Cr</option></select></div><div class="field"><label for="searchType">Property Type</label><select id="searchType"><option>Any Type</option><option>House</option><option>Plot</option><option>Office</option><option>Shop</option></select></div><div class="field" style="align-self:end;"><button class="btn btn-primary" id="searchBtn">Search</button></div></div></div><div class="property-controls"><div class="filter-bar"><button class="filter-btn active" data-filter="all">All</button><button class="filter-btn" data-filter="buy">Buy</button><button class="filter-btn" data-filter="rent">Rent</button><button class="filter-btn" data-filter="commercial">Commercial</button><button class="filter-btn" data-filter="plot">Plot</button></div><a href="#lead-form" class="btn btn-outline">Request Matching Property</a></div><div class="properties-grid" id="propertyGrid"><article class="property-card" data-category="buy" data-animate><div class="property-media"><img src="https://picsum.photos/seed/luxuryhome1/800/600" alt="Luxury residential house exterior" width="800" height="600" loading="lazy"><span class="tag property-type">Buy</span></div><div class="property-body"><div class="price-row"><strong>₹58 Lakh</strong><span class="tag">Verified</span></div><h3>Premium Family Home</h3><p class="property-meta">Location: Prime residential zone</p><div class="property-features"><span>Area: 1650 sq ft</span><span>3 Bedrooms</span><span>Ready to move</span></div><div class="btn-row" style="margin-top:1rem;"><a class="btn btn-primary" href="#lead-form">View Details</a></div></div></article><article class="property-card" data-category="rent" data-animate><div class="property-media"><img src="https://picsum.photos/seed/rentalflat2/800/600" alt="Modern rental apartment interior" width="800" height="600" loading="lazy"><span class="tag property-type">Rent</span></div><div class="property-body"><div class="price-row"><strong>₹18,000 / month</strong><span class="tag">Hot Lead</span></div><h3>Modern Rental Apartment</h3><p class="property-meta">Location: Well-connected family locality</p><div class="property-features"><span>Area: 1100 sq ft</span><span>2 Bedrooms</span><span>Immediate possession</span></div><div class="btn-row" style="margin-top:1rem;"><a class="btn btn-primary" href="#lead-form">View Details</a></div></div></article><article class="property-card" data-category="commercial" data-animate><div class="property-media"><img src="https://picsum.photos/seed/commercialspace3/800/600" alt="Commercial office building" width="800" height="600" loading="lazy"><span class="tag property-type">Commercial</span></div><div class="property-body"><div class="price-row"><strong>₹1.25 Cr</strong><span class="tag">Business Ready</span></div><h3>Office &amp; Retail Space</h3><p class="property-meta">Location: High visibility market road</p><div class="property-features"><span>Area: 2200 sq ft</span><span>Parking</span><span>High footfall</span></div><div class="btn-row" style="margin-top:1rem;"><a class="btn btn-primary" href="#lead-form">View Details</a></div></div></article><article class="property-card" data-category="plot" data-animate><div class="property-media"><img src="https://picsum.photos/seed/plotdeal4/800/600" alt="Open residential plot" width="800" height="600" loading="lazy"><span class="tag property-type">Plot</span></div><div class="property-body"><div class="price-row"><strong>₹32 Lakh</strong><span class="tag">Investment Pick</span></div><h3>Growth Potential Plot</h3><p class="property-meta">Location: Expanding development corridor</p><div class="property-features"><span>Area: 180 sq yd</span><span>Corner plot</span><span>Registry support</span></div><div class="btn-row" style="margin-top:1rem;"><a class="btn btn-primary" href="#lead-form">View Details</a></div></div></article><article class="property-card" data-category="buy" data-animate><div class="property-media"><img src="https://picsum.photos/seed/villaestate5/800/600" alt="Elegant villa exterior" width="800" height="600" loading="lazy"><span class="tag property-type">Buy</span></div><div class="property-body"><div class="price-row"><strong>₹92 Lakh</strong><span class="tag">Premium</span></div><h3>Elegant Independent Villa</h3><p class="property-meta">Location: Premium gated neighborhood</p><div class="property-features"><span>Area: 2400 sq ft</span><span>4 Bedrooms</span><span>Luxury finish</span></div><div class="btn-row" style="margin-top:1rem;"><a class="btn btn-primary" href="#lead-form">View Details</a></div></div></article><article class="property-card" data-category="commercial" data-animate><div class="property-media"><img src="https://picsum.photos/seed/shopdeal6/800/600" alt="Commercial shop frontage" width="800" height="600" loading="lazy"><span class="tag property-type">Commercial</span></div><div class="property-body"><div class="price-row"><strong>₹45 Lakh</strong><span class="tag">Retail Spot</span></div><h3>Ground Floor Shop</h3><p class="property-meta">Location: Main market frontage</p><div class="property-features"><span>Area: 450 sq ft</span><span>Main road</span><span>Rental potential</span></div><div class="btn-row" style="margin-top:1rem;"><a class="btn btn-primary" href="#lead-form">View Details</a></div></div></article></div></div></section>
+      <section class="section"><div class="container"><span class="eyebrow">Why Choose Us</span><h2 class="section-title" data-animate>Clients stay confident because every deal is handled with clarity and practical support.</h2><div class="reason-wrap"><div class="reason-visual" data-animate><span class="tag">Premium. Transparent. Responsive.</span><h3>Property decisions feel easier when the guidance is honest.</h3><p>SHRI BALAJI PROPERTY DEALER combines verified opportunities, responsive communication, and end-to-end guidance to improve trust and conversion at every stage.</p></div><div class="reasons-grid"><article class="reason-card" data-animate><div class="icon-box">✓</div><h3>Transparent Deals</h3><p>Clear conversation, realistic pricing, and no confusion-driven pressure tactics.</p></article><article class="reason-card" data-animate><div class="icon-box">🛡</div><h3>Verified Properties</h3><p>Focused screening and practical shortlisting to improve confidence.</p></article><article class="reason-card" data-animate><div class="icon-box">₹</div><h3>Best Market Price</h3><p>Better price understanding backed by local knowledge and market sense.</p></article><article class="reason-card" data-animate><div class="icon-box">⚡</div><h3>Fast Response</h3><p>Quick callback, WhatsApp follow-up, and consultation-first lead handling.</p></article><article class="reason-card" data-animate><div class="icon-box">👔</div><h3>Professional Support</h3><p>A premium customer experience that keeps communication structured and helpful.</p></article><article class="reason-card" data-animate><div class="icon-box">🧭</div><h3>End-to-End Guidance</h3><p>Support across inquiry, site visit, negotiation, and process coordination.</p></article></div></div></div></section>
+      <section class="section"><div class="container"><span class="eyebrow">Client Reviews</span><h2 class="section-title" data-animate>Real testimonials presented in a premium rotating review slider.</h2><div class="testimonials-wrap" data-animate><div class="testimonials-track" id="testimonialTrack"><article class="testimonial-card"><div class="stars">★★★★★</div><p>“Superb staff, owner, dealing and places… too good.”</p><strong style="display:block;margin-top:1rem;">Agarwal Ajay</strong></article><article class="testimonial-card"><div class="stars">★★★★★</div><p>“They provided such a good land at a reasonable price.”</p><strong style="display:block;margin-top:1rem;">Manish Kumar</strong></article><article class="testimonial-card"><div class="stars">★★★★★</div><p>“Quick response, very professional, good work.”</p><strong style="display:block;margin-top:1rem;">Prateek Agrawal</strong></article><article class="testimonial-card"><div class="stars">★★★★★</div><p>“Nice work.”</p><strong style="display:block;margin-top:1rem;">Prashant Garg</strong></article><article class="testimonial-card"><div class="stars">★★★★★</div><p>“Positive: Responsiveness, Quality, Professionalism, Value.”</p><strong style="display:block;margin-top:1rem;">Pranay A</strong></article></div></div></div></section>
     </section>
 
-    <section class="section" id="lead-form">
-      <div class="container">
-        <span class="eyebrow">Lead Capture</span>
-        <h2 class="section-title" data-animate>Capture serious buyer and seller inquiries with a clean, high-converting form.</h2>
-        <div class="lead-grid">
-          <article class="lead-card" data-animate>
-            <h3>Get Free Property Consultation</h3>
-            <p>Use this section to collect warm leads from homepage traffic while keeping the interaction short, mobile-friendly, and action focused.</p>
-            <form class="form-grid" id="inquiryForm">
-              <div class="field"><label for="name">Name</label><input id="name" name="name" type="text" placeholder="Enter full name" required></div>
-              <div class="field"><label for="phone">Phone</label><input id="phone" name="phone" type="tel" placeholder="Enter phone number" required></div>
-              <div class="field"><label for="propertyType">Property Type</label><select id="propertyType" name="propertyType"><option>Buy Property</option><option>Sell Property</option><option>Rent Property</option><option>Commercial Property</option><option>Plot & Land Deals</option><option>Property Investment Consulting</option></select></div>
-              <div class="field"><label for="budget">Budget</label><input id="budget" name="budget" type="text" placeholder="Enter budget range"></div>
-              <div class="field full"><label for="message">Message</label><textarea id="message" name="message" placeholder="Tell us what kind of property you are looking for"></textarea></div>
-              <div class="field full"><button type="submit" class="btn btn-primary">Get Free Property Consultation</button></div>
-            </form>
-          </article>
-          <div class="extras-grid">
-            <article class="calc-card" data-animate>
-              <h3>Mortgage Calculator</h3>
-              <p>Offer quick monthly EMI guidance to keep buyers engaged longer and move them closer to inquiry.</p>
-              <div class="form-grid" style="margin-top:1rem; grid-template-columns:1fr;">
-                <div class="field"><label for="loanAmount">Loan Amount</label><input id="loanAmount" type="number" placeholder="5000000"></div>
-                <div class="field"><label for="interestRate">Interest Rate %</label><input id="interestRate" type="number" step="0.1" placeholder="8.5"></div>
-                <div class="field"><label for="loanYears">Loan Tenure (Years)</label><input id="loanYears" type="number" placeholder="20"></div>
-                <div class="field"><button class="btn btn-outline" id="calculateBtn" type="button">Calculate EMI</button></div>
-              </div>
-              <div class="calc-results" id="calcResults">
-                <strong>Estimated EMI: —</strong>
-                <span>Total Interest: —</span>
-                <span>Total Payment: —</span>
-              </div>
-            </article>
-            <article class="calc-card" data-animate>
-              <h3>Lead Conversion Boosters</h3>
-              <p>Use these supporting blocks to increase trust and urgency without needing backend integration.</p>
-              <ul style="margin-top:1rem; list-style:none; display:grid; gap:.8rem; color:var(--color-text-muted);">
-                <li>• Sticky WhatsApp and call buttons on every screen.</li>
-                <li>• Inquiry popup after 20 seconds to recover hesitant visitors.</li>
-                <li>• Exit-intent popup for last-chance consultation capture.</li>
-                <li>• SEO-ready sections for local real estate discovery.</li>
-              </ul>
-            </article>
-          </div>
-        </div>
-      </div>
+    <section class="page-view" id="page-about" data-page="about">
+      <section class="page-hero"><div class="container page-hero-grid"><div class="page-hero-card" data-animate><span class="eyebrow">About Company</span><h1>Build trust with a complete brand story, not just a single landing layout.</h1><p class="section-copy">This dedicated page makes the business feel more established by showing who leads it, how the process works, and why clients should trust SHRI BALAJI PROPERTY DEALER for important property decisions.</p><div class="btn-row" style="margin-top:1.5rem;"><a class="btn btn-primary" href="https://wa.me/919999999999" target="_blank" rel="noopener noreferrer">WhatsApp Now</a><a class="btn btn-outline" href="#page-contact">Contact Office</a></div></div><div class="owner-photo" role="img" aria-label="Owner image placeholder for Naveen Sharma" data-animate></div></div></section>
+      <section class="section" id="about"><div class="container page-grid-2"><article class="owner-card" data-animate><span class="tag">Owner · Naveen Sharma</span><h3 style="margin-top:1rem;">Dedicated to helping clients make smart and profitable property decisions.</h3><p>Use this page to highlight leadership, customer-first attitude, and consistent support across buying, selling, renting, and investment planning.</p><blockquote>“Dedicated to helping clients make smart and profitable property decisions.”</blockquote></article><article class="timeline-card" data-animate><span class="eyebrow">How We Work</span><div class="timeline-step"><strong>01</strong><div><h3>Understand Requirement</h3><p class="section-copy">Clarify property type, budget, purpose, and preferred location.</p></div></div><div class="timeline-step"><strong>02</strong><div><h3>Shortlist Options</h3><p class="section-copy">Present practical, verified, and decision-ready property choices.</p></div></div><div class="timeline-step"><strong>03</strong><div><h3>Site Visit & Negotiation</h3><p class="section-copy">Support visits, discussion, and pricing with a professional approach.</p></div></div><div class="timeline-step"><strong>04</strong><div><h3>Deal Completion</h3><p class="section-copy">Guide clients through paperwork and final deal coordination.</p></div></div></article></div></section>
+      <section class="section"><div class="container"><span class="eyebrow">Why Clients Stay</span><h2 class="section-title" data-animate>A dedicated company page makes the brand feel established and dependable.</h2><div class="service-grid"><article class="service-card" data-animate><div class="icon-box">🤝</div><h3>Relationship Focus</h3><p>Clients feel supported through consultation, selection, and closure.</p></article><article class="service-card" data-animate><div class="icon-box">📋</div><h3>Clear Process</h3><p>The workflow reduces confusion and improves confidence at every stage.</p></article><article class="service-card" data-animate><div class="icon-box">📍</div><h3>Local Presence</h3><p>A stronger location-based identity improves trust and repeat referrals.</p></article><article class="service-card" data-animate><div class="icon-box">⭐</div><h3>Brand Authority</h3><p>Separate about content makes the website feel complete rather than temporary.</p></article></div></div></section>
     </section>
 
-
-    <section class="section" id="buyers-guide">
-      <div class="container">
-        <span class="eyebrow">Buyer Guide</span>
-        <h2 class="section-title" data-animate>Give first-time buyers more confidence before they even call.</h2>
-        <div class="service-grid">
-          <article class="service-card" data-animate><div class="icon-box">1</div><h3>Requirement Analysis</h3><p>Understand budget, property type, purpose, and preferred location before shortlisting.</p></article>
-          <article class="service-card" data-animate><div class="icon-box">2</div><h3>Verified Shortlisting</h3><p>Show only serious and relevant options to save time and improve buyer trust.</p></article>
-          <article class="service-card" data-animate><div class="icon-box">3</div><h3>Site Visits</h3><p>Arrange guided property visits with clear explanation of pricing and locality value.</p></article>
-          <article class="service-card" data-animate><div class="icon-box">4</div><h3>Deal Closure</h3><p>Support negotiation, documentation flow, and final decision with confidence.</p></article>
-        </div>
-      </div>
+    <section class="page-view" id="page-investment" data-page="investment">
+      <section class="page-hero"><div class="container page-hero-grid"><div class="page-hero-card" data-animate><span class="eyebrow">Investment & Buyer Guide</span><h2>Give buyers and investors their own page so the site feels like a full business website.</h2><p class="section-copy">This page is useful for educating visitors, increasing time on site, and making the brand appear more serious and informative.</p></div><div class="timeline-card" data-animate><h3>Who this page helps</h3><ul class="info-list"><li>• First-time home buyers comparing options.</li><li>• Plot investors looking for future appreciation.</li><li>• Commercial buyers focused on rental returns.</li><li>• Sellers wanting better market understanding.</li></ul></div></div></section>
+      <section class="section" id="buyers-guide"><div class="container"><span class="eyebrow">Buyer Guide</span><h2 class="section-title" data-animate>Give first-time buyers more confidence before they even call.</h2><div class="service-grid"><article class="service-card" data-animate><div class="icon-box">1</div><h3>Requirement Analysis</h3><p>Understand budget, property type, purpose, and preferred location before shortlisting.</p></article><article class="service-card" data-animate><div class="icon-box">2</div><h3>Verified Shortlisting</h3><p>Show only serious and relevant options to save time and improve buyer trust.</p></article><article class="service-card" data-animate><div class="icon-box">3</div><h3>Site Visits</h3><p>Arrange guided property visits with clear explanation of pricing and locality value.</p></article><article class="service-card" data-animate><div class="icon-box">4</div><h3>Deal Closure</h3><p>Support negotiation, documentation flow, and final decision with confidence.</p></article></div></div></section>
+      <section class="section" id="investment"><div class="container"><span class="eyebrow">Investment Focus</span><h2 class="section-title" data-animate>Position the brand as a smart choice for investors, not only buyers and sellers.</h2><div class="reason-wrap"><div class="reason-visual" data-animate><span class="tag">Investor Ready Guidance</span><h3>Find locations with stronger future growth potential.</h3><p>This section adds authority by highlighting long-term appreciation, rental yield potential, and strategic buying support.</p></div><div class="reasons-grid"><article class="reason-card" data-animate><div class="icon-box">📍</div><h3>Emerging Locations</h3><p>Identify development zones and areas with strong long-term demand signals.</p></article><article class="reason-card" data-animate><div class="icon-box">🏗</div><h3>Plot Appreciation</h3><p>Help investors compare land opportunities with future resale or construction value.</p></article><article class="reason-card" data-animate><div class="icon-box">🏬</div><h3>Commercial Yield</h3><p>Guide users toward offices and shops that may generate stronger rental returns.</p></article><article class="reason-card" data-animate><div class="icon-box">📊</div><h3>Risk Awareness</h3><p>Encourage practical decisions with better attention to verification and market timing.</p></article></div></div></div></section>
+      <section class="section"><div class="container"><div class="cta-banner" data-animate><span class="eyebrow" style="background:rgba(255,255,255,.12);color:#fff;">Smart Real Estate Planning</span><h2 class="section-title" style="color:#fff; margin-top:1rem;">Use this page to attract higher-intent leads who are still comparing options.</h2><p class="section-copy" style="color:rgba(255,255,255,.8);">Educational pages improve trust because they show expertise, not just selling intent.</p></div></div></section>
     </section>
 
-    <section class="section" id="investment">
-      <div class="container">
-        <span class="eyebrow">Investment Focus</span>
-        <h2 class="section-title" data-animate>Position the brand as a smart choice for investors, not only buyers and sellers.</h2>
-        <div class="reason-wrap">
-          <div class="reason-visual" data-animate>
-            <span class="tag">Investor Ready Guidance</span>
-            <h3>Find locations with stronger future growth potential.</h3>
-            <p>This section adds authority by highlighting long-term appreciation, rental yield potential, and strategic buying support.</p>
-          </div>
-          <div class="reasons-grid">
-            <article class="reason-card" data-animate><div class="icon-box">📍</div><h3>Emerging Locations</h3><p>Identify development zones and areas with strong long-term demand signals.</p></article>
-            <article class="reason-card" data-animate><div class="icon-box">🏗</div><h3>Plot Appreciation</h3><p>Help investors compare land opportunities with future resale or construction value.</p></article>
-            <article class="reason-card" data-animate><div class="icon-box">🏬</div><h3>Commercial Yield</h3><p>Guide users toward offices and shops that may generate stronger rental returns.</p></article>
-            <article class="reason-card" data-animate><div class="icon-box">📊</div><h3>Risk Awareness</h3><p>Encourage practical decisions with better attention to verification and market timing.</p></article>
-          </div>
-        </div>
-      </div>
+    <section class="page-view" id="page-gallery" data-page="gallery">
+      <section class="page-hero"><div class="container page-hero-grid"><div class="page-hero-card" data-animate><span class="eyebrow">Property Gallery</span><h2>Show a visual portfolio so the website feels broader, richer, and more premium.</h2><p class="section-copy">A separate gallery page helps the business look like a complete real estate brand instead of a short campaign landing page.</p></div><div class="timeline-card" data-animate><h3>What to showcase here</h3><ul class="info-list"><li>• Family homes and villas.</li><li>• Plots and land opportunities.</li><li>• Commercial and investment spaces.</li><li>• Site visits, client meetings, and locality highlights.</li></ul></div></div></section>
+      <section class="section" id="gallery"><div class="container"><span class="eyebrow">Visual Showcase</span><h2 class="section-title" data-animate>A premium property gallery creates the feel of a real business website.</h2><div class="gallery-mosaic"><article data-animate><img src="https://picsum.photos/seed/galleryhero21/1200/1400" alt="Luxury property gallery cover" width="1200" height="1400" loading="lazy"><div class="overlay"><h3>Luxury Residences</h3><p>Premium homes and family-ready spaces.</p></div></article><article data-animate><img src="https://picsum.photos/seed/galleryplot22/900/700" alt="Plot and land property" width="900" height="700" loading="lazy"><div class="overlay"><h3>Plots & Land</h3><p>Future growth and construction opportunities.</p></div></article><article data-animate><img src="https://picsum.photos/seed/gallerycommercial23/900/700" alt="Commercial property building" width="900" height="700" loading="lazy"><div class="overlay"><h3>Commercial Spaces</h3><p>Retail, office, and rental-focused deals.</p></div></article><article data-animate><img src="https://picsum.photos/seed/galleryinterior24/900/700" alt="Modern home interior" width="900" height="700" loading="lazy"><div class="overlay"><h3>Modern Interiors</h3><p>Highlight finish quality and premium living experience.</p></div></article><article data-animate><img src="https://picsum.photos/seed/gallerymeeting25/900/700" alt="Client consultation environment" width="900" height="700" loading="lazy"><div class="overlay"><h3>Client Experience</h3><p>Show consultation quality and professional dealing.</p></div></article></div></div></section>
+      <section class="section" id="contact"><div class="container page-grid-2"><article class="contact-card" data-animate><h3>Contact SHRI BALAJI PROPERTY DEALER</h3><p>Replace placeholder contact details below with your final business information before publishing.</p><ul class="contact-list"><li><strong>Phone:</strong> <span><a href="tel:+919999999999">+91 99999 99999</a></span></li><li><strong>WhatsApp:</strong> <span><a href="https://wa.me/919999999999" target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a></span></li><li><strong>Business Hours:</strong> <span>Mon - Sat · 9:00 AM to 8:00 PM</span></li><li><strong>Address:</strong> <span>Business address placeholder, update with exact office location</span></li></ul><div class="btn-row" style="margin-top:1.5rem;"><a class="btn btn-primary" href="tel:+919999999999">Click to Call</a><a class="btn btn-outline" href="https://wa.me/919999999999" target="_blank" rel="noopener noreferrer">WhatsApp</a></div></article><div class="map-card" data-animate><iframe class="map-frame" title="Google map placeholder" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Agra%2C%20Uttar%20Pradesh&z=13&output=embed"></iframe></div></div></section>
     </section>
 
-    <section class="section" id="gallery">
-      <div class="container">
-        <span class="eyebrow">Property Gallery</span>
-        <h2 class="section-title" data-animate>Add a premium visual showcase that feels like an extra page inside the website.</h2>
-        <div class="blog-grid">
-          <article class="blog-card" data-animate><img src="https://picsum.photos/seed/galleryhome11/900/700" alt="Premium house showcase" width="900" height="700" loading="lazy"><h3>Luxury Residences</h3><p>Showcase elegant homes and premium family-focused property options.</p></article>
-          <article class="blog-card" data-animate><img src="https://picsum.photos/seed/galleryplot12/900/700" alt="Residential plot showcase" width="900" height="700" loading="lazy"><h3>Plots & Land</h3><p>Highlight open land opportunities for long-term growth and future construction.</p></article>
-          <article class="blog-card" data-animate><img src="https://picsum.photos/seed/gallerycommercial13/900/700" alt="Commercial property showcase" width="900" height="700" loading="lazy"><h3>Commercial Spaces</h3><p>Display office, showroom, and retail opportunities with strong business appeal.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="faq">
-      <div class="container">
-        <span class="eyebrow">FAQ</span>
-        <h2 class="section-title" data-animate>Answer buyer and seller questions before they become objections.</h2>
-        <div class="faq-grid">
-          <article class="faq-item" data-animate><h3>What kinds of properties do you handle?</h3><p>Residential homes, flats, rental properties, commercial spaces, plots, and land investment opportunities.</p></article>
-          <article class="faq-item" data-animate><h3>Can I get help selling my property quickly?</h3><p>Yes, the website positions SHRI BALAJI PROPERTY DEALER as a partner for listing exposure, buyer matching, and negotiation support.</p></article>
-          <article class="faq-item" data-animate><h3>Do you assist with legal and paperwork support?</h3><p>Yes, legal assistance is included in the service stack to improve clarity and trust during transactions.</p></article>
-          <article class="faq-item" data-animate><h3>How can customers contact you fastest?</h3><p>Through click-to-call, sticky call button, direct WhatsApp, or the free consultation inquiry form.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <span class="eyebrow">Blog & News</span>
-        <h2 class="section-title" data-animate>Add a content layer that improves SEO and builds local authority.</h2>
-        <div class="blog-grid">
-          <article class="blog-card" data-animate><img src="https://picsum.photos/seed/blogestate1/800/500" alt="Property market article cover" width="800" height="500" loading="lazy"><span class="tag">Market Update</span><h3 style="margin-top:1rem;">How to choose the right plot for future appreciation</h3><p>Use educational articles like this to build credibility and attract search traffic.</p></article>
-          <article class="blog-card" data-animate><img src="https://picsum.photos/seed/blogestate2/800/500" alt="Home buying guide article cover" width="800" height="500" loading="lazy"><span class="tag">Buyer Guide</span><h3 style="margin-top:1rem;">5 things to verify before buying a family home</h3><p>Strong evergreen content helps explain expertise while keeping readers engaged longer.</p></article>
-          <article class="blog-card" data-animate><img src="https://picsum.photos/seed/blogestate3/800/500" alt="Commercial property article cover" width="800" height="500" loading="lazy"><span class="tag">Investment</span><h3 style="margin-top:1rem;">Commercial property signals smart investors watch closely</h3><p>Educational posts can move visitors from research stage to consultation stage.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="contact">
-      <div class="container">
-        <span class="eyebrow">Contact</span>
-        <h2 class="section-title" data-animate>Make calling, messaging, and visiting effortless.</h2>
-        <div class="contact-grid">
-          <article class="contact-card" data-animate>
-            <h3>Contact SHRI BALAJI PROPERTY DEALER</h3>
-            <p>Replace placeholder contact details below with your final business information before publishing.</p>
-            <ul class="contact-list">
-              <li><strong>Phone:</strong> <span><a href="tel:+919999999999">+91 99999 99999</a></span></li>
-              <li><strong>WhatsApp:</strong> <span><a href="https://wa.me/919999999999" target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a></span></li>
-              <li><strong>Business Hours:</strong> <span>Mon - Sat · 9:00 AM to 8:00 PM</span></li>
-              <li><strong>Address:</strong> <span>Business address placeholder, update with exact office location</span></li>
-            </ul>
-            <div class="btn-row" style="margin-top:1.5rem;">
-              <a class="btn btn-primary" href="tel:+919999999999">Click to Call</a>
-              <a class="btn btn-outline" href="https://wa.me/919999999999" target="_blank" rel="noopener noreferrer">WhatsApp</a>
-            </div>
-          </article>
-          <div class="map-card" data-animate>
-            <iframe class="map-frame" title="Google map placeholder" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Agra%2C%20Uttar%20Pradesh&z=13&output=embed"></iframe>
-          </div>
-        </div>
-      </div>
+    <section class="page-view" id="page-contact" data-page="contact">
+      <section class="section"><div class="container"><span class="eyebrow">Lead Capture</span><h2 class="section-title" data-animate>Keep one full page dedicated to direct inquiry and consultation.</h2><div class="lead-grid"><article class="lead-card" data-animate><h3>Get Free Property Consultation</h3><p>Use this dedicated contact page to collect warm leads from buyers, sellers, and investors with a clear inquiry flow.</p><form class="form-grid" id="inquiryForm"><div class="field"><label for="name">Name</label><input id="name" name="name" type="text" placeholder="Enter full name" required></div><div class="field"><label for="phone">Phone</label><input id="phone" name="phone" type="tel" placeholder="Enter phone number" required></div><div class="field"><label for="propertyType">Property Type</label><select id="propertyType" name="propertyType"><option>Buy Property</option><option>Sell Property</option><option>Rent Property</option><option>Commercial Property</option><option>Plot & Land Deals</option><option>Property Investment Consulting</option></select></div><div class="field"><label for="budget">Budget</label><input id="budget" name="budget" type="text" placeholder="Enter budget range"></div><div class="field full"><label for="message">Message</label><textarea id="message" name="message" placeholder="Tell us what kind of property you are looking for"></textarea></div><div class="field full"><button type="submit" class="btn btn-primary">Get Free Property Consultation</button></div></form></article><div class="extras-grid"><article class="calc-card" data-animate><h3>Mortgage Calculator</h3><p>Offer quick monthly EMI guidance to keep buyers engaged longer and move them closer to inquiry.</p><div class="form-grid" style="margin-top:1rem; grid-template-columns:1fr;"><div class="field"><label for="loanAmount">Loan Amount</label><input id="loanAmount" type="number" placeholder="5000000"></div><div class="field"><label for="interestRate">Interest Rate %</label><input id="interestRate" type="number" step="0.1" placeholder="8.5"></div><div class="field"><label for="loanYears">Loan Tenure (Years)</label><input id="loanYears" type="number" placeholder="20"></div><div class="field"><button class="btn btn-outline" id="calculateBtn" type="button">Calculate EMI</button></div></div><div class="calc-results" id="calcResults"><strong>Estimated EMI: —</strong><span>Total Interest: —</span><span>Total Payment: —</span></div></article><article class="calc-card" data-animate><h3>FAQs Before Contact</h3><ul class="info-list"><li>• Buying, selling, renting, and investment consultation available.</li><li>• Quick WhatsApp communication for fast lead response.</li><li>• Commercial and plot guidance included.</li><li>• Business location and phone details can be updated before launch.</li></ul></article></div></div></div></section>
     </section>
   </main>
 
@@ -611,6 +376,23 @@
   </script>
 
   <script>
+    
+    const pageViews = document.querySelectorAll('.page-view');
+    const pageLinks = document.querySelectorAll('[data-nav-page]');
+    function setActivePage(page) {
+      pageViews.forEach(view => view.classList.toggle('active', view.dataset.page === page));
+      pageLinks.forEach(link => link.classList.toggle('active', link.dataset.navPage === page));
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    pageLinks.forEach(link => {
+      link.addEventListener('click', (event) => {
+        event.preventDefault();
+        const page = link.dataset.navPage || 'home';
+        setActivePage(page);
+        mobilePanel?.classList.remove('active');
+      });
+    });
+
     const html = document.documentElement;
     const themeToggle = document.querySelector('[data-theme-toggle]');
     let theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
@@ -653,12 +435,7 @@
       });
     });
 
-    document.getElementById('searchBtn')?.addEventListener('click', () => {
-      const selected = document.getElementById('searchPurpose').value.toLowerCase();
-      const matching = [...filterButtons].find(btn => btn.dataset.filter === selected) || filterButtons[0];
-      matching.click();
-      document.getElementById('properties').scrollIntoView({ behavior: 'smooth' });
-    });
+    document.getElementById('searchBtn')?.addEventListener('click', () => { const selected = document.getElementById('searchPurpose').value.toLowerCase(); const matching = [...filterButtons].find(btn => btn.dataset.filter === selected) || filterButtons[0]; matching.click(); });
 
     const track = document.getElementById('testimonialTrack');
     let testimonialIndex = 0;
@@ -728,4 +505,3 @@
   </script>
 </body>
 </html>
-
