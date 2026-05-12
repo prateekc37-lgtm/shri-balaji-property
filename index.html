@@ -72,8 +72,9 @@
     .brand-mark { width: 48px; height: 48px; border-radius: 50%; display: grid; place-items: center; background: radial-gradient(circle at top, rgba(212,175,55,.35), rgba(10,35,66,.96)); color: #fff; box-shadow: inset 0 1px 1px rgba(255,255,255,0.3), var(--shadow-sm); }
     .brand-text strong { display: block; font-size: 0.85rem; letter-spacing: .05em; line-height: 1.2; }
 .brand-text span { color: var(--color-text-muted); font-size: 0.65rem; }
-.nav { display: flex; align-items: center; gap: var(--space-4); }
-.nav-links { display: flex; align-items: center; gap: var(--space-4); font-size: 0.8rem; font-weight: 600; color: var(--color-text-muted); }
+.nav { display: flex; align-items: center; gap: 1rem; flex-wrap: nowrap; }
+.nav-links { display: flex; align-items: center; gap: 1.2rem; font-size: 0.8rem; font-weight: 600; color: var(--color-text-muted); white-space: nowrap; }
+.header-actions { flex-wrap: nowrap !important; white-space: nowrap; }
 .nav-links a { padding: 0.5rem 0; transition: color 0.2s ease; }
 .nav-links a.active { color: var(--color-primary); border-bottom: 2px solid var(--color-primary); font-weight: 800; }
     .nav-links a:hover { color: var(--color-primary); }
@@ -82,7 +83,7 @@
     .hero { position: relative; overflow: hidden; min-height: calc(100vh - var(--header-height)); display: flex; align-items: center; background: linear-gradient(135deg, rgba(10,35,66,0.95), rgba(10,35,66,0.72)), url('https://picsum.photos/seed/luxuryestate/1600/1000') center/cover no-repeat; color: #fff; }
     .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at right top, rgba(212,175,55,0.28), transparent 35%), radial-gradient(circle at left bottom, rgba(255,255,255,0.08), transparent 30%); pointer-events: none; }
     .hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: 1.15fr 0.85fr; gap: var(--space-10); align-items: center; }
-    .hero-copy h1 { font-family: var(--font-display); font-size: clamp(2.8rem, 6vw, 5.6rem); line-height: 0.95; max-width: 10ch; }
+    .hero-copy h1 { font-family: var(--font-display); font-size: clamp(1.6rem, 3.5vw, 2.8rem); line-height: 1.2; max-width: 18ch; }
     .hero-copy p { margin-top: var(--space-5); max-width: 58ch; color: rgba(255,255,255,0.84); }
     .hero-actions { margin-top: var(--space-6); }
     .hero-points { margin-top: var(--space-6); display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: var(--space-3); }
@@ -180,7 +181,7 @@
     .page-hero { padding: clamp(var(--space-12), 7vw, var(--space-20)) 0 var(--space-8); background: linear-gradient(180deg, var(--color-surface-2), transparent); }
     .page-hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-6); align-items: center; }
     .page-hero-card { padding: var(--space-8); border-radius: var(--radius-xl); background: var(--color-surface); border: 1px solid var(--color-border); box-shadow: var(--shadow-md); }
-    .page-hero-card h1, .page-hero-card h2 { font-family: var(--font-display); font-size: var(--text-2xl); line-height: .98; }
+    .page-hero-card h1, .page-hero-card h2 { font-family: var(--font-display); font-size: clamp(1.4rem, 3vw, 2.2rem); line-height: 1.2; }
     .page-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-5); }
     .timeline-card { padding: var(--space-6); border-radius: var(--radius-lg); background: var(--color-surface); border: 1px solid var(--color-border); box-shadow: var(--shadow-sm); }
     .timeline-step { display: grid; grid-template-columns: 56px 1fr; gap: var(--space-4); align-items: start; margin-top: var(--space-4); }
